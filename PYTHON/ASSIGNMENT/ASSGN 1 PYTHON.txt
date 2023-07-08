@@ -1,0 +1,166 @@
+1. In the below elements which of them are values or an expression? eg:- values can be
+integer or string and expressions will be mathematical operators.
+*
+'hello'
+-87.8
+-
+/
++
+6
+
+   Values:
+     'hello' (string)
+     -87.8 (floating-point number)
+      6 (integer)
+	  
+	Expressions:
+      * (multiplication operator)
+      - (subtraction operator)
+      / (division operator)
+      +	(addition operator)
+
+2. What is the difference between string and variable?
+
+String:
+
+  - A string is a data type that represents a sequence of characters. 
+  - It is used to store and manipulate textual data.
+  - it enclosed with quotation marks (single or double) to indicate their beginning and end. 
+  - Strings can be assigned to variables for storage and manipulation.
+  e.g 'hello',"hi"
+
+Variable:
+
+  - A variable is a identifier that represents a memory location used to store data in a program.
+  - Variables are containers for holding different types of values, including strings, numbers, or other data types.
+  - They are used to store and manipulate data throughout a program. 
+  - A variable can be assigned a value, and that value can be changed or accessed later.
+
+
+3. Describe three different data types.
+   1.Numeric Types: int , float , complex  
+   2.Sequence Types: list , tuple , range ,  dict ,set 
+   3.Boolean Type: True,False
+
+
+4. What is an expression made up of? What do all expressions do?
+  
+  An expression is made up of a combination of values, variables, operators, and calls to functions. Expressions need to be evaluated.
+  It represents a computation or operation in a programming language. 
+  Expressions can be simple or complex, depending on the combination of elements involved.
+
+the components that can be found in an expression are:
+
+  Values: 
+     These are the fundamental building blocks of expressions. 
+	 Values can be a data stored in variables. 
+	 Examples of values include numbers (integers, floating-point numbers), strings, boolean values, and more.
+
+  Variables: 
+     Variables are used to store and represent values. 
+	 They can be assigned values that are used in expressions. 
+	 Variables allow you to refer to and manipulate data throughout a program.
+	 
+  Operators: 
+	 Operators are symbols or special keywords that perform operations on one or more values. 
+	 They can be arithmetic operators (such as +, -, *, /), comparison operators (such as ==, >, <), logical operators (such as and, or, not), and more. 
+	 Operators determine how the values in an expression are combined or manipulated.
+
+  Function calls: 
+     Function calls involve calling built-in or user-defined functions to perform specific operations or computations. 
+	 Functions can take input values (arguments) and return output values. 
+	 Function calls can be part of an expression, and their returned values can be used as components of larger expressions.
+
+
+
+5. This assignment statements, like spam = 10. What is the difference between an
+expression and a statement?
+
+Expression:
+      An expression is a combination of values, variables, operators, and function calls that can be evaluated to produce a value.
+      Expressions are used to compute or derive a result.
+	  They can be as simple as a single value or as complex as a combination of multiple operations.
+      Examples of expressions: 2 + 3, x * 5, len(my_list), "Hello"
+
+Statement:
+      A statement is a complete unit of code that performs a specific action or task. 
+	  It typically expresses a command, an assignment, a loop, or a conditional execution.
+      Statements are used to control the flow of execution, define program structure, and perform actions such as assigning values, making decisions, or repeating a block of code.
+      Examples of statements: x = 5, if condition:, while loop:, print("Hello, world!")
+
+
+
+6. After running the following code, what does the variable bacon contain?
+bacon = 22
+bacon + 1
+
+bacon = 22
+bacon + 1
+     Ans:23
+print(bacon)
+     Ans:22
+	 
+bacon = 22 assigns the value 22 to the variable bacon. At this point, the variable bacon holds the value 22.
+bacon + 1 is an expression that adds 1 to the value of bacon, which is 22. However, this expression does not modify the value of bacon itself or store the result back into bacon. 
+It simply evaluates to the value 23.
+So, the variable bacon would still have the original value assigned to it, which is 22, and not the result of the expression bacon + 1
+
+
+7. What should the values of the following two terms be?
+'spam' + 'spamspam'
+'spam' * 3
+
+The values of the two terms would be as follows:
+
+  'spam' + 'spamspam': This expression performs string concatenation. It combines the string 'spam' with the string 'spamspam'. 
+   The resulting value is the concatenation of the two strings, which gives 'spamspamspam'.
+
+  'spam' * 3: This expression performs string repetition. 
+   It repeats the string 'spam' three times. The resulting value is the string repeated three times, which gives 'spamspamspam'.
+
+   In both cases, the resulting value is the same: 'spamspamspam'
+
+
+8. Why is eggs a valid variable name while 100 is invalid?
+   
+   Because variable names cannot begin with a number.
+
+
+9. What three functions can be used to get the integer, floating-point number, or string
+conversion of a value?
+To get the integer, floating-point number, or string version of a value, you can use the following functions:
+
+Integer Conversion:
+
+     int() function: This function is used to convert a value to an integer. 
+	 It can convert numeric values or strings representing integers into their corresponding integer form. 
+	 example:
+             x = int(5.6)  # Converts the float value 5.6 to an integer: 5
+             y = int("10")  # Converts the string "10" to an integer: 10
+
+Floating-Point Conversion:
+
+     float() function: This function is used to convert a value to a floating-point number. 
+	 It can convert numeric values or strings representing numbers into their corresponding floating-point form. 
+	 example:
+          x = float(5)  # Converts the integer value 5 to a float: 5.0
+          y = float("3.14")  # Converts the string "3.14" to a float: 3.14
+
+String Conversion:
+
+     str() function: This function is used to convert a value to a string. 
+	 It can convert various types of values, including integers, floating-point numbers, booleans, and more, into their string representation. For example:
+     example:    
+		 x = str(10)  # Converts the integer value 10 to a string: "10"
+         y = str(3.14)  # Converts the float value 3.14 to a string: "3.14"
+
+10. Why does this expression cause an error? How can you fix it?
+'I have eaten' + 99 + ' burritos.'
+
+   - The expression 'I have eaten ' + 99 + ' burritos' causes an error because it involves concatenating a string ('I have eaten ') with an integer (99) using the + operator. 
+	 In Python, you can only concatenate strings with other strings, not with integers directly.
+	
+	- To fix the error and make the expression work, you need to ensure that the integer 99 is converted to a string before concatenation
+	  This can be done by using the str() function to convert the integer to its string representation
+	  
+	- 'I have eaten ' + str(99) + ' burritos' o/p = 'I have eaten 99 burritos'
