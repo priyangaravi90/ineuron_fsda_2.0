@@ -1,0 +1,228 @@
+1.What are the two values of the Boolean data type? How do you write them?
+    
+	In Python, the Boolean data type has two possible values: True and False. 
+    
+
+2. What are the three different types of Boolean operators?
+
+    AND operator (and),OR operator (or),NOT operator (not) are three boolean operators.
+	In these NOT operator not used in python
+
+3. Make a list of each Boolean operator's truth tables (i.e. every possible combination of Boolean
+values for the operator and what it evaluate ).
+
+AND operator (and):
+
+Operand 1	Operand 2	    Result
+True	    True	         True
+True	    False	         False
+False	    True	         False
+False	    False	         False
+
+OR operator (or):
+
+Operand 1	Operand 2	   Result
+True	     True	        True
+True	     False	        True
+False	     True	        True
+False	     False	        False
+
+NOT operator (not):
+
+Operand  Result
+True	 False
+False	 True
+
+
+
+4. What are the values of the following expressions?
+(5 > 4) and (3 == 5)
+not (5 > 4)
+(5 > 4) or (3 == 5)
+not ((5> 4) or (3 == 5))
+(True and True) and (True == False)
+(not False) or (not True)
+
+(5 > 4) and (3 == 5) 
+
+     5 > 4, evaluates to True.
+     3 == 5, evaluates to False.
+     The and operator returns True only if both operands are True.
+     Therefore, the overall expression evaluates to False.
+not (> 4)
+     This expression is invalid because the not operator requires an operand.
+     It should be written as not (5 > 4) or not 5 > 4.
+     (5 > 4) or (3 == 5)
+
+(5 > 4) or (3 == 5)
+
+     5 > 4, evaluates to True.
+     3 == 5, evaluates to False.
+     The or operator returns True if at least one operand is True.
+     Therefore, the overall expression evaluates to True.
+
+not ((5 > 4) or (3 == 5))
+
+    (5 > 4) or (3 == 5), evaluates to True.
+     The not operator negates the value of the expression.
+     Therefore, the overall expression evaluates to False.
+
+(True and True) and (True == False)
+
+     True and True, evaluates to True.
+     True == False, evaluates to False.
+     The and operator returns True only if both operands are True.
+     Therefore, the overall expression evaluates to False.
+
+(not False) or (not True)
+
+     not False, evaluates to True.
+     not True, evaluates to False.
+     The or operator returns True if at least one operand is True.
+     There fore, the overall expression evaluates to True.
+
+5. What are the six comparison operators?
+The six comparison operators in Python are:
+      Equal to (==),Not equal to (!=),Greater than (>),Less than (<),Greater than (>),Less than (<),Less than or equal to (<=)
+
+Equal to (==): 
+     Checks if two values are equal and returns True if they are, and False otherwise.
+
+Not equal to (!=): 
+     Checks if two values are not equal and returns True if they are not, and False otherwise.
+
+Greater than (>):  
+     Checks if the left operand is greater than the right operand and returns True if it is, and False otherwise.
+
+Less than (<): 
+     Checks if the left operand is less than the right operand and returns True if it is, and False otherwise.
+
+Greater than or equal to (>=): 
+     Checks if the left operand is greater than or equal to the right operand and returns True if it is, and False otherwise.
+
+Less than or equal to (<=): 
+     Checks if the left operand is less than or equal to the right operand and returns True if it is, and False otherwise.
+
+
+
+6. How do you tell the difference between the equal to and assignment operators?Describe a
+condition and when you would use one.
+
+ the difference between the equal to and assignment operators is
+    Equal to operator (==): 
+	       The double equal to operator is used to compare if two values are equal. 
+	       It returns True if the values are equal, and False otherwise.
+	
+    Assignment operator (=): 
+	       The single equal to operator is used for assignment. 
+		   It assigns the value on the right-hand side to the variable on the left-hand side.
+  
+  condition and when you would use one.
+     You would use the equal to operator (==) in conditions, such as if statements or loops, to compare values and make decisions based on the result of the comparison.
+
+     You would use the assignment operator (=) when you want to assign a value to a variable or update the value of a variable with a new valu      
+
+
+7. Identify the three blocks in this code:
+spam = 0
+if spam == 10:
+print('eggs')
+if spam > 5:
+print('bacon')
+else:
+print('ham')
+print('spam')
+print('spam')
+
+Block 1:
+
+if spam == 10:
+    print('eggs')
+	
+This block contains the print('eggs') statement and is executed if the condition spam == 10 is true.
+
+Block 2:
+
+if spam > 5:
+    print('bacon')
+	
+ This block contains the print('bacon') statement and is executed if the condition spam > 5 is true.
+.
+
+Block 3:
+
+else:
+    print('ham')
+print('spam')
+print('spam')
+
+This block includes the else statement and subsequent print statements. 
+It is executed when the condition spam > 5 is false. 
+The print('ham') statement and also print statements print('spam') and print('spam')) 
+
+8. Write code that prints Hello if 1 is stored in spam, prints Howdy if 2 is stored in spam, and prints
+Greetings! if anything else is stored in spam.
+
+if spam == 1:
+    print('Hello')
+elif spam == 2:
+    print('Howdy')
+else:
+    print('Greetings!')
+
+
+9.If your programme is stuck in an endless loop, what keys you’ll press?
+
+   Ctrl+C (or Command+C on macOS): 
+       This key combination sends an interrupt signal to the running program, forcing it to terminate.
+	   It is a commonly used method to stop a program that is stuck in an infinite loop.
+
+10. How can you tell the difference between break and continue?
+
+    1.break and continue are used to control the flow of loops, such as for and while loops.
+	2.break statement:
+         - The break statement is used to exit the current loop immediately, regardless of the loop's condition.
+         - When encountered, the break statement terminates the loop entirely, and the program continues with the code that follows the loop.
+         - It is typically used when you want to prematurely exit a loop based on a certain condition.
+
+    3.continue statement:
+        - The continue statement is used to skip the current iteration of the loop and move to the next iteration.
+        - When encountered, the continue statement jumps back to the beginning of the loop and reevaluates the loop's condition.
+        - It is typically used when you want to skip some specific iterations of a loop based on a certain condition, without terminating the entire loop.
+    
+	Thus break is used to exit the loop entirely, while continue is used to skip the current iteration and move to the next iteration of the loop.
+
+11. In a for loop, what is the difference between range(10), range(0, 10), and range(0, 10, 1)?
+     
+	range(10): 
+	    This form specifies that the loop should iterate over a sequence of numbers starting from 0 (default start value) up to, but not including, the specified end value of 10.
+		
+	range(0, 10): 
+	    This form specifies the start value as 0 and the end value as 10. 
+	
+	range(0, 10, 1): 
+	     This form specifies the start value as 0, the end value as 10, and the step value as 1.
+		 The step value determines the increment between successive numbers in the sequence.	
+
+
+12. Write a short program that prints the numbers 1 to 10 using a for loop. Then write an equivalent
+program that prints the numbers 1 to 10 using a while loop.
+    prints the numbers 1 to 10 using a for loop
+	       for i in range(1, 11):
+            print(i)
+    
+	an equivalent program that prints the numbers 1 to 10 using a while loop.
+	
+    i = 1
+    while i <= 10:
+      print(i)
+      i += 1
+
+
+13. If you had a function named bacon() inside a module named spam, how would you call it after
+importing spam?
+
+syntax
+     import spam
+
+     spam.bacon()
