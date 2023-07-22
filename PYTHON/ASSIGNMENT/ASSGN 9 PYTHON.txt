@@ -1,0 +1,183 @@
+1. To what does a relative path refer?
+
+     A relative path refers to the location of a file or directory in relation to the current working directory. 
+	 In computing, file systems organize files and directories in a hierarchical structure, and the relative path allows you to specify the location of a file or directory relative to the directory you are currently in.
+
+     For example, let's say you have the following directory structure:
+       - /home/user/documents/
+            - project/
+               - code/
+                 - main.py
+                   - data/
+                      - data.txt
+                        - notes.txt
+     If you are currently located in the directory /home/user/documents/, the relative path to access notes.txt would be simply notes.txt, as it is in the current directory.
+
+     If you are in the code/ directory, the relative path to access data.txt would be ../data/data.txt. The .. notation means "go up one level in the directory hierarchy."
+
+     Similarly, if you are in the project/ directory, the relative path to access main.py would be code/main.py.
+
+     Relative paths are helpful because they are independent of the absolute file system path, making it easier to move and share files and directories between different locations without having to change the path references each time.
+
+
+2. What does an absolute path start with your operating system?
+
+
+   On most operating systems, an absolute path starts with the root directory of the file system. 
+   The root directory is the top-level directory that serves as the starting point for the entire file system hierarchy. 
+   The notation for the root directory varies depending on the operating system:
+
+        On Windows: 
+		     An absolute path starts with the drive letter followed by a colon (:) and a backslash (\). For example: C:\Users\Username\Documents\file.txt represents an absolute path on the C: drive.
+        On Unix-like systems (e.g., Linux, macOS): An absolute path starts with a forward slash (/). For example: /home/username/Documents/file.txt represents an absolute path in the user's home directory.
+
+Absolute paths provide the complete location of a file or directory in the file system hierarchy, starting from the root directory, regardless of the current working directory. They are useful when you need to specify the exact location of a file or directory, regardless of the context in which it is being referenced.
+
+
+3. What do the functions os.getcwd() and os.chdir() do?
+
+  In Python, the functions os.getcwd() and os.chdir() are part of the os module and are used to interact with the operating system's file system.
+
+os.getcwd(): This function stands for "get current working directory." It returns a string representing the current working directory (CWD) of the Python script or application. The current working directory is the directory in which the Python script is currently running. It is the default location where the script will look for files and where it will place files if their paths are not specified explicitly.
+Here's an example of how to use os.getcwd():
+    import os
+    current_directory = os.getcwd()
+    print("Current working directory:", current_directory)
+    os.chdir(path): This function stands for "change directory." It allows you to change the current working directory to the specified path. The path parameter should be a string representing the absolute or relative path to the directory you want to change to.
+Here's an example of how to use os.chdir():
+    import os
+    # Display the current working directory
+    print("Current working directory:", os.getcwd())
+    # Change the current working directory
+    new_directory = "/home/user/documents/"
+    os.chdir(new_directory)
+    # Display the updated current working directory
+    print("Updated working directory:", os.getcwd())
+	
+After executing this code, the current working directory will be changed to the new path specified in os.chdir(). Keep in mind that os.chdir() affects the working directory of the Python script, and any file operations without an absolute path will be performed relative to the updated current working directory.
+
+    
+4. What are the . and .. folders?
+
+In most file systems, including those used in various operating systems, the . and .. folders are special entries that have specific meanings:
+
+        . (dot): In the context of file systems, . refers to the current directory. It is a way to reference the directory you are currently in. For example, if you are in the directory /home/user/documents/, then . represents the /home/user/documents/ directory itself.
+
+        .. (dot-dot): .. refers to the parent directory of the current directory. It allows you to refer to the directory one level higher in the file system hierarchy. For instance, if you are in the directory /home/user/documents/project/, then .. represents the /home/user/documents/ directory.
+
+These special entries are often used to navigate the file system using relative paths. 
+
+For example:
+    If you are in the directory /home/user/documents/project/, and you want to access a file in the data directory, you can use the relative path ../data/file.txt, where .. takes you to the parent directory (/home/user/documents/) and then you navigate to the data directory.
+
+    Similarly, to access a file from a subdirectory within the current directory, you can use ./ (or just the file name directly) to represent the current directory. For example, if you are in /home/user/documents/project/, to access a file in the same directory, you can use ./file.txt.
+
+These conventions make it easier to move between directories and specify file paths relative to the current location.
+
+     
+5. In C:\bacon\eggs\spam.txt, which part is the dir name, and which part is the base name?
+
+        In the path "C:\bacon\eggs\spam.txt":
+        The directory name (dir name) is: "C:\bacon\eggs"
+        The base name is: "spam.txt"
+    
+	In a file path, the directory name refers to the path of the directory containing the file, while the base name is the name of the file itself. The directory name is everything in the path before the last path separator (backslash \ in this case), and the base name is everything after the last path separator.
+    So, in the given path, "C:\bacon\eggs" is the directory name, and "spam.txt" is the base name.
+
+
+6. What are the three “mode” arguments that can be passed to the open() function?
+
+     In Python, the open() function is used to open files, and it takes two main arguments: the file path and the mode. The mode argument specifies the purpose for which the file is being opened. There are three main mode arguments:
+
+       'r': This is the default mode and stands for "read." It opens the file for reading only. If the file does not exist, it will raise a FileNotFoundError.
+       'w': This mode stands for "write." It opens the file for writing. If the file already exists, it will truncate its contents (remove all data) and start writing from the beginning. If the file does not exist, it will create a new empty file.
+       'a': This mode stands for "append." It opens the file for writing, but in this mode, if the file already exists, it will not truncate its contents. Instead, it will move the file pointer to the end of the file so that new data can be written at the end. If the file does not exist, it will create a new empty file.
+
+     To use the open() function with the mode argument, you pass the mode as the second argument:
+       # Open a file for reading
+       file = open("example.txt", "r")
+
+       # Open a file for writing
+       file = open("example.txt", "w")
+
+       # Open a file for appending
+      file = open("example.txt", "a")
+     It's important to note that when working with files, you should always close them after use using the close() method of the file object or use the file object in a with statement, which automatically handles closing the file for you after the block of code is executed.
+
+
+7. What happens if an existing file is opened in write mode?
+
+     If an existing file is opened in write mode ('w'), the file's contents will be truncated, and the file will be considered empty. This means that all the existing data in the file will be deleted, and if you start writing to the file, the new data will overwrite any previous content.
+
+Here are the key points to remember when opening an existing file in write mode:
+
+     If the file does not exist: When you open a file in write mode, and the file does not exist at the specified path, Python will create a new empty file with the given name.
+
+     If the file already exists: If the file exists at the specified path, opening it in write mode will truncate its contents. Truncation means that all the data inside the file will be deleted, and the file size will be set to zero bytes. Any data previously stored in the file will be lost.
+
+To demonstrate this behavior, let's consider an example:
+
+      # Existing file with some content
+      file_path = "example.txt"
+
+      # Open the file in write mode
+      with open(file_path, "w") as file:
+        file.write("This content will overwrite the existing content.\n")
+
+      # The file "example.txt" now contains only the new content.
+      After executing the code, the original content of "example.txt" will be completely replaced by the new content specified in the write() method.
+
+If you want to append new data to an existing file without deleting the existing content, you should use the append mode ('a') instead of write mode ('w').
+
+
+8. How do you tell the difference between read() and readlines()?
+
+     In Python, both read() and readlines() are methods used to read data from a file, but they have different functionalities and return different types of data:
+
+      read(): This method is used to read the entire content of a file as a single string. When you call read() on a file object, it reads the file from the current position of the file pointer until the end of the file and returns all the data as a single string.
+      # Example using read()
+          with open("example.txt", "r") as file:
+          content = file.read()
+          print(content)
+      
+	  readlines(): This method is used to read the content of a file line by line and returns a list of strings, where each element in the list represents a line from the file. The line endings (e.g., \n, \r\n) are included in each element.
+      # Example using readlines()
+          with open("example.txt", "r") as file:
+          lines = file.readlines()
+          print(lines)
+     To summarize:
+         read() returns the entire content of the file as a single string.
+         readlines() returns the content of the file as a list of strings, where each element represents a line from the file.
+It's important to note that both read() and readlines() methods read the data from the file and move the file pointer to the end of the file. If you call either of these methods again, it will return an empty string or an empty list, respectively, because the file pointer is already at the end of the file. To read the file again, you would need to close and reopen the file or use other methods to control the file pointer position, such as seek().
+
+
+9. What data structure does a shelf value resemble?
+
+
+    In Python, a shelf value resembles a dictionary-like data structure. The shelf is a module in the Python standard library that provides a way to store and persistently manage key-value pairs in a disk-based storage format. It is part of the shelve module.
+
+    A shelf value acts similarly to a dictionary because it allows you to store data using key-value pairs. You can use any hashable data type as the key and any picklable data type as the value. The shelf module uses Python's built-in pickle module to serialize the data before writing it to a file on disk, and it deserializes the data when you access it again.
+
+    The main difference between a shelf and a regular dictionary is that the data stored in a shelf is persistent, meaning it is saved to a file on disk and can be retrieved even after the Python program has terminated. This makes shelves useful for scenarios where you want to store and retrieve data between different program executions.
+
+Here's a basic example of how to use a shelf:
+    import shelve
+   
+   # Open or create a shelf file
+    with shelve.open('mydata') as shelf:
+    # Store data in the shelf
+    shelf['name'] = 'John'
+    shelf['age'] = 30
+    shelf['city'] = 'New York'
+
+   # The data is now stored in 'mydata.db' on disk
+
+   # Reopen the shelf file
+    with shelve.open('mydata') as shelf:
+    # Retrieve data from the shelf
+    print(shelf['name'])
+    print(shelf['age'])
+    print(shelf['city'])
+When you run this code, it will create a file named mydata.db (or mydata.dat, depending on the Python version) in the current working directory, which will store the key-value pairs. The second with shelve.open('mydata') block reopens the shelf file, and the stored data can be accessed using the keys, just like in a dictionary.
+
+Keep in mind that shelves are not designed for concurrent access by multiple processes, so they are better suited for single-threaded scenarios.
