@@ -1,0 +1,140 @@
+1. Is the Python Standard Library included with PyInputPlus?
+
+         1. PyInputPlus is a third-party library and is not officially part of the Python Standard Library. It is an external library that you need to install separately to use in your Python projects.
+         2.PyInputPlus is designed to provide additional input validation and features on top of the built-in input() function in Python. It allows you to easily handle various types of user input and provides functionalities like input validation, time-out handling, and retrying input prompts.
+
+         3.To use PyInputPlus, you need to install it using pip, like this:
+                pip install pyinputplus
+
+         4.After installing PyInputPlus, you can import it in your Python scripts and start using its functions to handle user input more effectively.
+
+2. Why is PyInputPlus commonly imported with import pyinputplus as pypi?
+
+      
+    1.PyInputPlus is a third-party library for handling user input in Python, and it is commonly imported using the following syntax:
+        import pyinputplus as pyip
+    2.In this import statement, pyinputplus is the name of the library, and pyip is an alias that you can use to reference the library's functions and classes in your code. Using an alias like pyip can be a matter of personal preference or coding style.
+    3.By importing pyinputplus as pyip, you can use shorter and more concise code when calling the functions and methods from the library throughout your program.
+    4.an example of how you might use pyinputplus with the pyip alias:
+        import pyinputplus as pyip
+        name = pyip.inputStr("Enter your name: ")
+        age = pyip.inputInt("Enter your age: ")
+    
+	5.PyPI (Python Package Index) is not related to importing pyinputplus. PyPI is a repository of Python software packages that developers use to share and distribute their libraries, frameworks, and tools.
+	6.When you install pyinputplus using pip (the Python package manager), pip fetches the library from PyPI and installs it on your system.
+
+In summary, the common alias pyip for pyinputplus is used to simplify code when working with the library, while PyPI is the Python Package Index used for package distribution and installation, not for importing libraries in your code.
+
+
+3. How do you distinguish between inputInt() and inputFloat()?
+
+    In the pyinputplus library, inputInt() and inputFloat() are functions that handle user input specifically for integers and floating-point numbers, respectively. 
+	They are used to ensure that the user enters a valid integer or float value, and they provide error handling and re-prompting functionalities until valid input is provided.
+
+Here's how you can distinguish between inputInt() and inputFloat():
+
+    inputInt():
+       inputInt() is used to get user input for integers.
+       It ensures that the input provided by the user can be converted into a valid integer.
+       If the user enters a non-integer value or an invalid integer format, it raises an error and re-prompts for input until a valid integer is given.
+       The function returns the validated integer value.
+       Example of using inputInt():
+            import pyinputplus as pyip
+            age = pyip.inputInt("Enter your age: ")
+            print("Your age is:", age)
+
+
+    inputFloat():
+       inputFloat() is used to get user input for floating-point numbers.
+       It ensures that the input provided by the user can be converted into a valid float.
+       If the user enters a non-float value or an invalid float format, it raises an error and re-prompts for input until a valid float is given.
+       The function returns the validated float value.
+       Example of using inputFloat():
+            import pyinputplus as pyip
+            weight = pyip.inputFloat("Enter your weight (kg): ")
+            print("Your weight is:", weight)
+
+In summary, inputInt() is used for integers, while inputFloat() is used for floating-point numbers, and they both ensure the user enters valid input of the specified type.
+
+
+4. Using PyInputPlus, how do you ensure that the user enters a whole number between 0 and 99?
+
+    1.To ensure that the user enters a whole number between 0 and 99 using PyInputPlus, you can use the inputInt() function with additional arguments for input validation. 
+	2.PyInputPlus provides several optional arguments that you can use to customize the behavior of the input functions, including min, max, and greaterThan, lessThan to set specific constraints on the allowed input values.
+
+Here's how you can achieve this:
+      import pyinputplus as pyip
+    # Prompt the user to enter a whole number between 0 and 99
+      number = pyip.inputInt(prompt="Enter a number between 0 and 99: ", min=0, max=99)
+      print("You entered:", number)
+Explanation:
+      The inputInt() function is used to get the user input as an integer.
+      prompt is used to display the message to the user when asking for input.
+      min=0 ensures that the input value must be greater than or equal to 0.
+      max=99 ensures that the input value must be less than or equal to 99.
+With these arguments, PyInputPlus will automatically validate the user's input and handle any invalid entries by re-prompting until the user provides a valid whole number between 0 and 99.
+
+
+5. What is transferred to the keyword arguments allowRegexes and blockRegexes?
+
+   1.In the pyinputplus library, the keyword arguments allowRegexes and blockRegexes are used to specify regular expressions that define patterns of allowed and blocked input values, respectively. 
+   2.Regular expressions are powerful tools for pattern matching and can be used to control the input that is accepted or rejected by the pyinputplus functions.
+
+Here's how these keyword arguments work:
+
+   allowRegexes:
+       When you pass a regular expression pattern as the value of the allowRegexes argument, pyinputplus will only accept input that matches the specified pattern.
+       If the user's input matches any of the provided regular expressions, it will be considered valid and returned as the result of the input() function.
+       If the user's input does not match any of the provided regular expressions, pyinputplus will raise a pyinputplus.RetryLimitException after the maximum number of retries (if set) is exceeded.
+
+   blockRegexes:
+       When you pass a regular expression pattern as the value of the blockRegexes argument, pyinputplus will reject any input that matches the specified pattern.
+       If the user's input matches any of the provided regular expressions in the blockRegexes, pyinputplus will raise a pyinputplus.RetryLimitException after the maximum number of retries (if set) is exceeded.
+  
+Both allowRegexes and blockRegexes accept one or more regular expression patterns. You can use Python's regular expression syntax to define these patterns.
+
+an example of using allowRegexes and blockRegexes:
+       import pyinputplus as pyip
+
+    # Only allow even numbers between 0 and 99
+        number = pyip.inputInt(prompt="Enter an even number between 0 and 99: ", min=0, max=99, allowRegexes=[r'^[02468]$'])
+
+    # Block any input that contains the letter 'a'
+        text = pyip.inputStr(prompt="Enter some text (without 'a'): ", blockRegexes=[r'a'])
+        print("You entered:", number)
+        print("Text:", text)
+In this example, the allowRegexes argument only allows input that matches the regular expression r'^[02468]$', which means only even digits (0, 2, 4, 6, 8) are accepted. The blockRegexes argument blocks any input that contains the letter 'a'.
+
+
+6. If a blank input is entered three times, what does inputStr(limit=3) do?
+
+    If a blank input (empty string) is entered three times in a row while using inputStr(limit=3) in the pyinputplus library, the function will raise a pyinputplus.RetryLimitException. The limit argument specifies the maximum number of retries allowed for the user input, and if the user exceeds this limit by providing invalid input (in this case, a blank input), the RetryLimitException will be raised.
+
+Let's see an example to illustrate this behavior:
+    import pyinputplus as pyip
+
+try:
+    # Prompt the user to enter a non-blank string, with a maximum of 3 retries
+    text = pyip.inputStr(prompt="Enter a non-blank string: ", limit=3)
+    print("You entered:", text)
+except pyip.RetryLimitException:
+    print("Maximum number of retries exceeded. Please try again later.")
+
+If the user enters a blank input (just presses Enter without typing anything) three times consecutively, the RetryLimitException will be raised, and the message "Maximum number of retries exceeded. Please try again later." will be printed.
+
+The limit argument helps to prevent the user from endlessly retrying invalid input and allows you to handle such cases more gracefully in your code.
+
+
+7. If blank input is entered three times, what does inputStr(limit=3, default='hello') do?
+
+
+      If blank input (empty string) is entered three times in a row while using inputStr(limit=3, default='hello') in the pyinputplus library, the function will return the default value specified, which is 'hello'. The limit argument specifies the maximum number of retries allowed for the user input, and if the user exceeds this limit without providing valid input, the function will return the default value instead of raising an exception.
+
+Let's see an example to illustrate this behavior:
+      import pyinputplus as pyip
+    # Prompt the user to enter a non-blank string, with a maximum of 3 retries
+      text = pyip.inputStr(prompt="Enter a non-blank string: ", limit=3, default='hello')
+      print("You entered:", text)
+If the user enters a blank input (just presses Enter without typing anything) three times consecutively, the function will return the default value 'hello', and the message "You entered: hello" will be printed.
+
+The default argument allows you to specify a fallback value that will be used when the user exceeds the retry limit without providing valid input. This can be useful for providing a default value to proceed with if the user fails to provide the required input within the specified number of retries.
