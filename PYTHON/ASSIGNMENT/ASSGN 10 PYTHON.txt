@@ -1,0 +1,128 @@
+1. How do you distinguish between shutil.copy() and shutil.copytree()?
+
+    shutil.copy() and shutil.copytree() are both functions provided by the shutil module in Python, but they serve different purposes:
+
+     1.shutil.copy(src, dst, *, follow_symlinks=True)
+       -shutil.copy() is used to copy a single file from the source (src) to the destination (dst).
+       -The src argument represents the path of the source file that you want to copy.
+       -If follow_symlinks is set to True (which is the default), symbolic links will be followed, and the target of the link will be copied instead of the link itself.
+     Example:
+        import shutil
+
+        # Copy a single file
+        src_file = '/path/to/source/file.txt'
+        dst_file = '/path/to/destination/file.txt'
+        shutil.copy(src_file, dst_file)
+        shutil.copytree(src, dst, symlinks=False, ignore=None, copy_function=copy2, ignore_dangling_symlinks=False)
+     2.shutil.copytree() is used to recursively copy an entire directory and its contents from the source (src) to the destination (dst).
+       -The src argument represents the path of the source directory that you want to copy.
+       -The dst argument represents the path where you want to create a new directory with the same contents as the source directory.
+       -If symlinks is set to True, symbolic links will be copied as symbolic links, instead of copying the target of the link.
+       -The ignore argument allows you to provide a function that determines which files and directories should be ignored during the copy process. It should take the source directory and a list of its contents as input and return a list of names to ignore.
+       -copy_function specifies the function that will be used to copy individual files. By default, it uses shutil.copy2, which preserves file metadata (timestamps, permissions, etc.).
+       -If ignore_dangling_symlinks is set to True, the function will not raise an error if there are dangling symlinks (symlinks that point to non-existent targets) present in the source directory.
+    Example:
+       import shutil
+
+       # Recursively copy a directory
+       src_dir = '/path/to/source/directory'
+       dst_dir = '/path/to/destination/directory'
+       shutil.copytree(src_dir, dst_dir)
+   In summary, use shutil.copy() when you want to copy a single file, and use shutil.copytree() when you want to copy an entire directory and its contents recursively.
+   
+   
+2. What function is used to rename files??
+
+     To rename files in Python, you can use the os.rename() function from the os module. This function allows you to change the name of a file by providing the current file path (including the file name) and the new file path (including the new file name). If the new file path is in a different directory, the function will also move the file to that directory with the new name.
+
+     the syntax for the os.rename() function:
+       import os
+       # Rename a file
+       old_file_path = '/path/to/current/file.txt'
+       new_file_path = '/path/to/new/file.txt'
+       os.rename(old_file_path, new_file_path)
+
+3. What is the difference between the delete functions in the send2trash and shutil modules?
+
+      The send2trash and shutil modules in Python both provide functions to delete files or directories, but they differ in their approach and behavior:
+
+      send2trash module:
+
+           The send2trash module is a third-party library that allows you to send files or directories to the system's trash or recycle bin instead of permanently deleting them.
+           The send2trash.send2trash() function is used to move files or directories to the trash. It sends the items to the trash or recycle bin that is managed by the operating system, making it possible to recover them later if needed (depending on the OS's settings).
+           The function accepts the path of the file or directory that you want to delete (move to trash) as an argument.
+      Example:
+           import send2trash
+
+          file_to_delete = '/path/to/file.txt'
+          send2trash.send2trash(file_to_delete)
+          This will move the file specified by file_to_delete to the system's trash or recycle bin, depending on the OS.
+
+      shutil module:
+
+          The shutil module, which is part of the Python standard library, provides several functions for file and directory operations, including file deletion.
+          The primary function for file deletion is shutil.rmtree(), which is used to recursively delete an entire directory and its contents. This function permanently deletes files and directories, bypassing the system's trash or recycle bin. Be cautious while using this function, as the deleted files cannot be easily recovered.
+      Example:
+          import shutil
+
+          directory_to_delete = '/path/to/directory'
+          shutil.rmtree(directory_to_delete)
+
+     This will recursively delete the specified directory and all its contents.
+
+In summary, the send2trash module is used for sending files or directories to the system's trash or recycle bin, making it possible to recover them later if needed. On the other hand, the shutil module provides functions like shutil.rmtree() to permanently delete files and directories without using the trash or recycle bin, making data recovery more difficult. Choose the appropriate module and function based on your specific needs and the desired file deletion behavior.
+
+
+4.ZipFile objects have a close() method just like File objects’ close() method. What ZipFile method is
+equivalent to File objects’ open() method?
+
+     The equivalent method in ZipFile objects to the open() method in File objects is the ZipFile() constructor.
+
+     In the zipfile module, you can create a ZipFile object using the ZipFile() constructor to work with ZIP archives. It allows you to open an existing ZIP file for reading or create a new ZIP file for writing.
+
+     the syntax for creating a ZipFile object:
+          import zipfile
+
+          # To open an existing ZIP file for reading:
+          with zipfile.ZipFile('example.zip', 'r') as zip_file:
+          # Perform operations on the zip_file
+
+          # To create a new ZIP file for writing:
+          with zipfile.ZipFile('new_archive.zip', 'w') as new_zip_file:
+          # Perform operations on the new_zip_file
+
+In the example above, zipfile.ZipFile('example.zip', 'r') opens the existing ZIP file named "example.zip" for reading, and zipfile.ZipFile('new_archive.zip', 'w') creates a new ZIP file named "new_archive.zip" for writing.
+
+Once you have the ZipFile object, you can use various methods of the object to interact with the files and directories within the ZIP archive, such as extract(), extractall(), write(), etc.
+
+
+
+
+5. Create a programme that searches a folder tree for files with a certain file extension (such as .pdf
+or .jpg). Copy these files from whatever location they are in to a new folder.
+ 
+
+Below is a Python program that searches a folder tree for files with a specified file extension (e.g., ".pdf" or ".jpg") and copies these files to a new folder:
+       import os
+       import shutil
+       def search_and_copy_files_by_extension(source_folder, target_folder, target_extension):
+        if not os.path.exists(target_folder):
+        os.makedirs(target_folder)
+
+    for root, _, files in os.walk(source_folder):
+        for file in files:
+            if file.endswith(target_extension):
+                source_file_path = os.path.join(root, file)
+                target_file_path = os.path.join(target_folder, file)
+                shutil.copy(source_file_path, target_file_path)
+                print(f"Copied: {source_file_path} -> {target_file_path}")
+
+if __name__ == "__main__":
+    source_folder = "/path/to/source/folder"  # Replace this with the source folder to search
+    target_folder = "/path/to/target/folder"  # Replace this with the target folder to copy the files
+    file_extension = ".pdf"  # Replace this with the file extension you want to search for (e.g., ".jpg")
+
+    search_and_copy_files_by_extension(source_folder, target_folder, file_extension)
+Replace "/path/to/source/folder" with the path of the folder from which you want to search for files, "/path/to/target/folder" with the path of the folder where you want to copy the matching files, and ".pdf" with the file extension you want to find (e.g., ".jpg", ".png", etc.).
+
+The program uses the os.walk() function to traverse the folder tree recursively. For each file found with the specified file extension, it copies the file from its source location to the target folder using shutil.copy(). The target folder is created if it doesn't already exist. The program then prints a message for each file copied, showing the source and target paths.
