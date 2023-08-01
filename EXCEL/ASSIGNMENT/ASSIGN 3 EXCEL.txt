@@ -1,0 +1,122 @@
+1. How and when to use the AutoSum command in excel?
+
+The AutoSum command in Excel is a useful tool that automatically calculates the sum of a selected range of cells. It can save time and effort when you need to quickly calculate totals in your spreadsheet. Here's how and when to use the AutoSum command:
+
+How to use AutoSum:
+  Open your Excel spreadsheet and go to the cell where you want the sum to appear.
+  Select the range of cells you want to sum up. For example, if you want to sum cells A1 to A10, click on cell A11 (where the sum will appear) and drag your cursor from A1 to A10 to highlight the range.
+  Now, look for the "AutoSum" button in the "Editing" group on the "Home" tab of the Excel ribbon. It looks like the Greek letter sigma (Σ) next to the letter "A."
+  Click the "AutoSum" button, and Excel will automatically enter the SUM function and include the selected range in the formula.
+  Press "Enter" to confirm, and the sum will appear in the selected cell.
+
+When to use AutoSum:
+  You can use AutoSum when you need to quickly find the sum of a range of numbers in your spreadsheet. It's especially handy when you have a column or row of numerical data and want to calculate the total without manually writing a formula.
+
+Here are some common use cases for AutoSum:
+
+  Calculating column or row totals: When you have a series of numbers in a column or row, you can use AutoSum to find the total at the end of that column or row.
+  Finding subtotals: You can use AutoSum to calculate subtotals for specific sections of your data. Simply select the cells corresponding to a specific section, and AutoSum will provide the subtotal for that section.
+  Summing multiple ranges: If you have non-contiguous ranges of cells that you want to sum up, you can use AutoSum for each range separately to quickly calculate their totals.
+  Keep in mind that AutoSum is a basic tool for summing data and may not be suitable for more complex calculations. For advanced scenarios, you may need to use other Excel functions or create custom formulas.
+
+It's worth mentioning that the steps described here are based on the typical Excel interface up to my knowledge cutoff in September 2021. Depending on the version and updates of Excel available after that, the interface or steps may vary slightly.
+
+
+2. What is the shortcut key to perform AutoSum?
+
+In Excel, the shortcut key to perform AutoSum is "Alt + =" (equals sign). This keyboard shortcut is a quick way to insert the SUM function and automatically select the range of cells that Excel thinks you want to sum.
+
+Here's how to use the shortcut:
+ Select the cell where you want the sum to appear.
+ Press "Alt + =" on your keyboard.
+ Excel will try to intelligently determine the range of cells to include in the sum based on the nearby data. If Excel selects the correct range, press "Enter" to confirm, and the sum will appear in the selected cell. If the selected range is not what you intended, you can manually adjust the range before pressing "Enter."
+
+Please note that the effectiveness of the "Alt + =" shortcut depends on Excel's interpretation of the data around the active cell. If the surrounding data is not contiguous or in an unexpected format, Excel might not select the range you want, and you may need to manually adjust the range before pressing "Enter."
+
+
+3. How do you get rid of Formula that omits adjacent cells?
+ 
+If you have a formula in Excel that omits adjacent cells and you want to include those cells in the formula, you can follow these steps to correct it:
+
+Let's assume you have a formula in cell C1 that omits the adjacent cells A1 and B1, and you want to modify it to include those cells in the calculation.
+
+  Select the cell with the formula: Click on cell C1 to select it. This is the cell that contains the formula you want to edit.
+
+  Edit the formula: There are several ways to edit the formula in the cell:
+
+   a. Edit in the Formula Bar: Click on the formula bar at the top of the Excel window. You will see the formula displayed in the formula bar. Modify the formula as needed to include the missing cells (e.g., change "=SUM(D1:D10)" to "=SUM(A1:D10)").
+
+   b. Edit directly in the cell: You can also edit the formula directly in the cell by clicking on the cell and then clicking on the formula itself (it will be highlighted). Modify the formula as needed to include the missing cells.
+
+  Include the omitted cells in the formula: Ensure that you include the missing cells in the formula by either adding them to the range reference or using the appropriate cell references in the formula.
+
+  Press Enter: After you have corrected the formula to include the adjacent cells, press the "Enter" key to apply the changes. The formula will be updated, and the adjacent cells will be included in the calculation.
+
+Now, your formula should correctly include the adjacent cells that were previously omitted, and the result will be updated accordingly.
+
+Always double-check your formulas after making changes to ensure they are calculating the values you expect. Incorrect formulas can lead to errors in your data analysis. If you encounter any issues, carefully review the formula and cell references to ensure they are accurate.
+
+
+4. How do you select non-adjacent cells in Excel 2016?
+
+In Excel 2016, you can select non-adjacent cells (cells that are not next to each other) by using one of the following methods:
+
+Method 1: Using the Ctrl key
+
+Click on the first cell you want to select.
+Press and hold the "Ctrl" key on your keyboard.
+While holding the "Ctrl" key, click on the other cells you want to select. Each cell you click will be added to the selection.
+Release the "Ctrl" key once you have selected all the non-adjacent cells you need.
+
+Method 2: Using the Shift key (for contiguous selections)
+
+Click on the first cell of the range you want to select.
+Press and hold the "Shift" key on your keyboard.
+While holding the "Shift" key, click on the last cell of the range you want to select. Excel will select all the cells in between.
+If you want to add more non-adjacent cells to the selection, press and hold the "Ctrl" key and click on the additional cells.
+
+Method 3: Using the mouse (for non-contiguous selections)
+
+Click on the first cell you want to select.
+Hold down the "Ctrl" key on your keyboard.
+While holding "Ctrl," use your mouse to click on the other cells you want to select. Each cell you click will be added to the selection.
+Release the "Ctrl" key when you have selected all the non-adjacent cells you need.
+Using these methods, you can easily select multiple non-adjacent cells in Excel 2016 for various tasks, such as formatting, data manipulation, or creating formulas. Remember to use the appropriate key combinations (Ctrl or Shift) depending on whether you want to select cells individually or in a contiguous range
+
+5. What happens if you choose a column, hold down the Alt key and press the letters
+ocw in quick succession?
+
+ If you choose a column in Excel, hold down the "Alt" key, and press the letters "o," "c," and "w" in quick succession, it will perform the following actions:
+
+  o: This activates the "Sort" menu in Excel. The "Sort" menu allows you to sort the data in the selected column based on certain criteria.
+
+  c: After pressing "o" to activate the "Sort" menu, pressing "c" will sort the selected column in ascending order (A to Z, or 0 to 9 depending on the data type).
+
+  w: After pressing "c" to sort in ascending order, pressing "w" will close the "Sort" menu, and the column will be sorted in ascending order.
+
+In summary, holding down the "Alt" key and pressing the letters "o," "c," and "w" in quick succession allows you to sort the selected column in ascending order without the need to navigate through the Excel ribbon or menus manually.
+
+If you want to sort the column in descending order (Z to A or 9 to 0), you can use the same method but press the letter "d" instead of "c." So it would be "Alt + o" to activate the "Sort" menu, "d" to sort in descending order, and "w" to close the "Sort" menu.
+
+
+6. If you right-click on a row reference number and click on Insert, where will the row
+be added?
+
+If you right-click on a row reference number in Excel and click on "Insert," the new row will be added above the row that corresponds to the row reference number you clicked on.
+
+Here's the step-by-step process:
+
+  Open your Excel spreadsheet and locate the row reference number on the left-hand side of the sheet. Each row has a unique reference number.
+
+  Right-click on the row reference number of the row where you want to insert a new row. For example, if you right-click on row 5, the new row will be added above row 5.
+
+  After right-clicking, a context menu will appear. In this menu, you should see the option "Insert" or "Insert Sheet Rows" (the exact wording may vary depending on your Excel version).
+
+  Click on "Insert" or "Insert Sheet Rows," and a new row will be inserted above the row you right-clicked on. The existing rows below the inserted row will shift down by one row.
+
+You can now enter data or formulas into the newly inserted row or format it as needed.
+
+By default, Excel will insert a single row above the selected row. If you want to insert multiple rows, you can select multiple row reference numbers by clicking and dragging or by holding down the "Ctrl" key and clicking on the row reference numbers of the rows you want to insert above. Then, right-click on any of the selected row reference numbers, click "Insert," and the number of rows you selected will be inserted above the first selected row.
+
+
+
