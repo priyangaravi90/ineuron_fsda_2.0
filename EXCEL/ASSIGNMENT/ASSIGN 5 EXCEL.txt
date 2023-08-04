@@ -1,0 +1,229 @@
+1. How many types of conditions are available in conditional formatting on Excel?
+
+As of my last knowledge update in September 2021, Microsoft Excel offers various types of conditions that you can use for conditional formatting. These conditions allow you to format cells based on specific criteria. The exact options and terminology might have changed in newer versions of Excel, but as of my last update, some common types of conditions available in conditional formatting include:
+
+   Cell Value: 
+      Format cells based on their numerical or text values, such as greater than, less than, equal to, between, etc.
+
+   Formula:  
+      Use custom formulas to determine the formatting criteria based on cell values or other conditions.
+
+   Top/Bottom Rules: 
+      Format the top or bottom "N" values or percentages in a range of cells.
+
+   Data Bars: 
+       Apply gradient-filled bars to cells based on their values.
+
+   Color Scales: 
+       Apply color gradients to cells based on the relative values in the selected range.
+
+   Icon Sets: 
+       Display icons (such as arrows, flags, etc.) based on the cell values.
+
+   Text Contains: 
+       Format cells based on specific text within them.
+
+   Duplicate Values: 
+       Identify and format duplicate or unique values.
+
+   Blank Cells: 
+       Format cells that are empty or non-empty.
+
+   Date Occurring: 
+       Format cells based on specific dates or time periods.
+
+   Expression: 
+      Use custom expressions to define formatting conditions.
+
+  Stop If True: Allows you to create multiple rules and stop applying further rules if a condition is met.
+
+Please note that the availability of these conditions and their exact names might vary based on the version of Microsoft Excel you are using. It's recommended to refer to the official documentation or your Excel's help resources for the most up-to-date information.
+
+
+
+
+
+2. How to insert border in Excel with Format Cells dialog?
+
+To insert borders in Excel using the "Format Cells" dialog, follow these steps:
+
+Select Cells: First, select the cells or range of cells where you want to apply the borders.
+
+Open Format Cells Dialog:
+
+Right-click on the selected cells, and from the context menu, choose "Format Cells." OR
+Go to the "Home" tab on the Excel ribbon. In the "Font" group, click on the small arrow icon in the lower-right corner. This will open the "Format Cells" dialog.
+Navigate to the Border Tab:
+In the "Format Cells" dialog, navigate to the "Border" tab. It should be the third tab in the dialog.
+
+Choose Border Style:
+
+In the "Presets" section, you can choose from various preset border styles by clicking on the buttons with different border icons.
+To create a custom border, go to the "Line Styles" section. Here, you can select the type of border (left, right, top, bottom) and its style, color, and thickness. Use the buttons under "Border" to apply the desired border to the selected cells.
+
+Apply Borders:
+
+Click on the outline of the cells in the diagram shown to apply the selected border style to those edges of the cells.
+You can also click on the "Inside" or "Outside" buttons to apply borders to the inside or outside edges of the selected range.
+Preview and Confirm:
+As you make changes, you will see a preview of the border styles applied to the sample cells in the dialog. Once you're satisfied with the border settings, click the "OK" button to apply the borders to the selected cells.
+
+Close the Dialog:
+After clicking "OK," the borders you've selected will be applied to the chosen cells, and the "Format Cells" dialog will close.
+
+
+
+
+3. How to Format Numbers as Currency in Excel?
+
+To format numbers as currency in Excel, you can use the "Format Cells" dialog or the formatting options in the Home tab. Here's how to do it using both methods:
+
+Method 1: Using the Format Cells Dialog:
+
+Select Cells: Select the cells or range of cells that you want to format as currency.
+
+Open Format Cells Dialog:
+
+Right-click on the selected cells and choose "Format Cells" from the context menu. OR
+Go to the "Home" tab on the Excel ribbon. In the "Number" group, click on the small arrow icon in the lower-right corner. This will open the "Format Cells" dialog.
+
+Choose Currency Format:
+
+In the "Format Cells" dialog, go to the "Number" tab.
+In the "Category" list on the left, select "Currency."
+Choose the desired currency symbol from the drop-down list.
+
+Set Decimal Places:
+
+Under the "Decimal places" section, specify the number of decimal places you want to display for the currency values.
+Negative Numbers: You can also choose how you want negative numbers to be displayed, such as with a minus sign or in parentheses.
+
+Symbol Placement: Choose whether you want the currency symbol to appear at the beginning or end of the number.
+
+Preview and Confirm:
+
+As you make changes, you will see a preview of the currency format applied to the sample cells in the dialog.
+Once you're satisfied with the settings, click the "OK" button to apply the currency formatting to the selected cells.
+
+Method 2: Using Formatting Options in the Home Tab:
+
+Select Cells: Select the cells or range of cells that you want to format as currency.
+
+Open Currency Format Options:
+
+In the "Home" tab on the Excel ribbon, locate the "Number" group.
+Click on the drop-down arrow next to the number format display. It may show the default "General" format.
+
+Choose Currency Format:
+
+From the drop-down list, select "Currency."
+A small additional drop-down arrow will appear next to the currency format. Click on this arrow to choose the desired currency symbol and other formatting options.
+Set Decimal Places and Negative Numbers:
+
+You can set the number of decimal places and how negative numbers are displayed using the options in the additional drop-down menu.
+Symbol Placement: Similarly, you can choose where you want the currency symbol to appear.
+
+Apply Formatting:
+
+Choose the desired options, and the selected cells will be immediately formatted as currency according to your preferences.
+Remember that these steps may vary slightly depending on the version of Microsoft Excel you are using. You can adjust the currency formatting options as needed to suit your specific requirements.
+
+
+
+4. What are the steps to format numbers in Excel with the Percent style?
+
+To format numbers as percentages in Excel, you can use the "Format Cells" dialog or the formatting options available in the Home tab. Here's how to do it using both methods:
+
+Method 1: Using the Format Cells Dialog:
+
+Select Cells: Highlight the cells or range of cells that you want to format as percentages.
+
+Open Format Cells Dialog:
+
+Right-click on the selected cells and choose "Format Cells" from the context menu. OR
+Go to the "Home" tab on the Excel ribbon. In the "Number" group, click on the small arrow icon in the lower-right corner. This will open the "Format Cells" dialog.
+Choose Percent Format:
+
+In the "Format Cells" dialog, go to the "Number" tab.
+In the "Category" list on the left, select "Percentage."
+Decimal Places:
+
+Under the "Decimal places" section, specify the number of decimal places you want to display for the percentages.
+Symbol Placement:
+
+Choose whether you want the percentage symbol (%) to appear at the beginning or end of the number.
+Negative Numbers: You can also choose how you want negative numbers to be displayed, such as with a minus sign or in parentheses.
+
+Preview and Confirm:
+
+As you make changes, you will see a preview of the percentage format applied to the sample cells in the dialog.
+Once you're satisfied with the settings, click the "OK" button to apply the percentage formatting to the selected cells.
+
+Method 2: Using Formatting Options in the Home Tab:
+
+Select Cells: Select the cells or range of cells that you want to format as percentages.
+
+Open Percent Format Options:
+
+In the "Home" tab on the Excel ribbon, locate the "Number" group.
+Click on the drop-down arrow next to the number format display. It may show the default "General" format.
+Choose Percent Format:
+
+From the drop-down list, select "Percentage."
+A small additional drop-down arrow will appear next to the percentage format. Click on this arrow to choose the desired number of decimal places and other formatting options.
+Negative Numbers and Symbol Placement:
+
+In the additional drop-down menu, you can set how you want negative numbers to be displayed and where you want the percentage symbol (%) to appear.
+Apply Formatting:
+
+Choose the desired options, and the selected cells will be immediately formatted as percentages based on your preferences.
+Remember that these steps may vary slightly depending on the version of Microsoft Excel you are using. Adjust the percentage formatting options as needed to suit your specific requirements.
+
+
+
+5. What is a shortcut to merge two or more cells in excel?
+
+In Microsoft Excel, you can use the following shortcut to merge two or more cells:
+
+Alt + H + M + M
+
+Here's a breakdown of the steps:
+
+Press and hold the Alt key on your keyboard.
+While holding the Alt key, press the H key. This will open the "Home" tab on the Excel ribbon.
+While still holding the Alt key, press the M key twice (M is the shortcut for the "Merge & Center" command).
+After pressing the shortcut, the selected cells will be merged and centered.
+
+
+6. How do you use text commands in Excel?
+
+In Microsoft Excel, you can use text commands in various ways to perform actions, calculations, and manipulations on your data. Text commands are typically entered into cells, formulas, or specific Excel functions. Here are a few common ways to use text commands in Excel:
+
+  Formulas and Functions: Many Excel functions and formulas involve using text commands to manipulate text data. For example:
+
+  CONCATENATE Function: You can use this function to combine multiple text strings into a single string.
+                        LEFT, RIGHT, MID Functions: These functions extract portions of text from a larger string based on specified positions or lengths.
+  
+  LEN Function: This function calculates the length of a text string.
+   
+  FIND and SEARCH Functions: These functions help you locate a specific substring within a larger text string.
+
+  SUBSTITUTE Function: Use this function to replace occurrences of a specific substring within a text string.
+  
+  TEXT Function: You can use this function to format numbers as text using custom formats.
+
+  Data Cleaning and Formatting: Text commands are useful for cleaning and formatting text data:
+
+  Text to Columns Wizard: You can split text in a single cell into multiple cells using delimiters.
+                          PROPER, UPPER, LOWER Functions: These functions help you change the case of text within cells.
+  Custom Lists and AutoFill: You can create custom lists of text values and use AutoFill to quickly fill cells with these values.
+
+  Comments and Notes: You can add comments to cells to provide additional information using text.
+
+  Naming Ranges: You can assign names to ranges of cells using text to make referencing and formulas easier.
+
+  Data Validation: Use text commands to set up custom data validation rules for text input in cells.
+
+  Text Manipulation in VBA: If you're using Excel's Visual Basic for Applications (VBA), you can write custom macros and scripts that involve extensive text manipulation.
+
+ 
