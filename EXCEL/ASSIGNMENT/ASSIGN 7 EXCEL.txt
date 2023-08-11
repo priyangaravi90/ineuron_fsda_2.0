@@ -1,0 +1,227 @@
+1. Using Insert Function, give examples of any function available in the
+different dropdowns present in the function library. For example
+AutoSum, Recently Used, Text, Date & Time, etc.
+
+Examples of functions from different dropdown categories in the function library:
+
+1.AutoSum:
+
+SUM: Adds up a range of numbers.
+AVERAGE: Calculates the average of a range of numbers.
+COUNT: Counts the number of cells in a range that contains numbers.
+MAX: Returns the highest value in a range.
+MIN: Returns the lowest value in a range.
+Recently Used:
+Functions that you've recently used will appear in this dropdown, making it convenient to reuse them.
+
+2.Text:
+
+CONCATENATE: Combines multiple text strings into one.
+LEFT: Returns a specified number of characters from the beginning of a text string.
+RIGHT: Returns a specified number of characters from the end of a text string.
+LEN: Returns the length (number of characters) of a text string.
+UPPER: Converts text to uppercase.
+LOWER: Converts text to lowercase.
+
+3.Date & Time:
+
+TODAY: Returns the current date.
+NOW: Returns the current date and time.
+DATE: Creates a date value based on year, month, and day.
+TIME: Creates a time value based on hours, minutes, and seconds.
+DATEDIF: Calculates the difference between two dates in various units (days, months, years, etc.).
+
+4.Math & Trig:
+
+POWER: Raises a number to a specified power.
+SQRT: Returns the square root of a number.
+SIN: Returns the sine of an angle.
+COS: Returns the cosine of an angle.
+RAND: Generates a random number between 0 and 1.
+ROUND: Rounds a number to a specified number of decimal places.
+
+5.Logical:
+
+IF: Performs a logical test and returns different values based on the result.
+AND: Returns TRUE if all arguments are TRUE.
+OR: Returns TRUE if any argument is TRUE.
+NOT: Returns the logical opposite of a value.
+IFERROR: Returns a value you specify if a formula evaluates to an error, otherwise returns the result of the formula.
+
+6.Financial:
+
+PV: Calculates the present value of an investment or loan.
+FV: Calculates the future value of an investment or loan.
+PMT: Calculates the payment for a loan or investment based on a constant interest rate and number of periods.
+RATE: Calculates the interest rate for an investment or loan.
+NPV: Calculates the net present value of a series of cash flows.
+
+7.Statistical:
+
+AVERAGEIF: Calculates the average of a range based on a specified condition.
+COUNTIF: Counts the number of cells in a range that meet a specified condition.
+SUMIF: Adds up the numbers in a range that meet a specified condition.
+MEDIAN: Returns the median (middle value) of a range of numbers.
+STDEV: Estimates the standard deviation of a sample of numbers.
+These examples should give you a good idea of the types of functions you can find in each category.
+
+
+2. What are the different ways you can select columns and rows?
+
+we can select columns and rows using various methods. Here are some different ways to do so:
+
+1.Selecting Columns:
+
+Click and Drag: Click on the column header (the letter at the top of the column) and drag your mouse to select multiple columns.
+Ctrl + Space: Press the "Ctrl" key (or "Command" on Mac) and then press the "Space" key to select the entire column of the active cell.
+Shift + Arrow Keys: Press and hold the "Shift" key while pressing the right or left arrow key to extend the selection to adjacent columns.
+
+2.Selecting Rows:
+
+Click and Drag: Click on the row header (the number on the left of the row) and drag your mouse to select multiple rows.
+Shift + Space: Press and hold the "Shift" key and then press the "Space" key to select the entire row of the active cell.
+Shift + Arrow Keys: Press and hold the "Shift" key while pressing the up or down arrow key to extend the selection to adjacent rows.
+
+3.Selecting Multiple Columns and Rows:
+
+Click and Drag: Click on a cell, drag your mouse to select a range of cells (columns and rows), and release the mouse button.
+Ctrl/Shift + Click: Hold down the "Ctrl" key (or "Command" on Mac) and click on multiple column or row headers to select non-adjacent columns or rows.
+Ctrl + A: Press "Ctrl" (or "Command" on Mac) and "A" keys together to select the entire worksheet. Pressing it again will deselect everything.
+
+4.Using the Name Box:
+
+Name Box: Type the range you want to select directly into the Name Box (located next to the formula bar) and press "Enter." For example, typing "A1:C10" and pressing "Enter" will select the range of cells from A1 to C10.
+These methods should work in most spreadsheet applications, including Microsoft Excel and Google Sheets. Keep in mind that some keyboard shortcuts and features might vary slightly depending on the software version and platform you're using.
+
+
+3. What is AutoFit and why do we use it?
+
+AutoFit is a feature found in spreadsheet software like Microsoft Excel and Google Sheets that automatically adjusts the width of columns or the height of rows to fit the contents within them. It is used to ensure that the data within a column or row is displayed in its entirety without being cut off or truncated.
+
+1.AutoFit Columns:
+When you use the AutoFit Columns feature, the column width is adjusted so that the longest piece of content in that column, whether it's text, numbers, or other data, fits comfortably within the column without wrapping or being hidden. This is particularly useful when you have cells with varying lengths of text or when you want to make sure that all data is visible without manual adjustments.
+
+2.AutoFit Rows:
+AutoFitting rows adjusts the height of rows to accommodate the tallest cell content within each row. This is especially helpful when dealing with wrapped text, where the text in a cell spans multiple lines. AutoFitting rows ensures that all lines of text are visible.
+
+Why Use AutoFit:
+
+Data Visibility: AutoFit ensures that your data is fully visible without any truncation. This is crucial for accurate data analysis and interpretation.
+
+Professional Appearance: Well-organized and neatly aligned columns and rows improve the overall appearance of your spreadsheet, making it more presentable and easier to read.
+
+Time Efficiency: AutoFit saves time by automatically adjusting column widths and row heights, preventing the need for manual adjustments.
+
+Adaptability: AutoFit is especially useful when working with data that might change frequently or when importing data from external sources with varying content lengths.
+
+Print Layout: When you plan to print your spreadsheet, using AutoFit ensures that your printed copy will look well-organized and fit on the printed page.
+
+To use AutoFit, simply select the column(s) or row(s) you want to adjust, and then use the corresponding AutoFit Columns or AutoFit Rows option. 
+In Microsoft Excel, you can usually find these options in the "Home" tab of the ribbon, within the "Cells" group. In Google Sheets, you can right-click on the selected columns/rows and choose "Resize" > "AutoFit" from the context menu.
+
+
+
+4. How can you insert new rows and columns into the existing table?
+
+To insert new rows and columns into an existing table in spreadsheet  follow these steps:
+
+1.Inserting New Rows:
+
+Select the row below where you want to insert new rows.
+Right-click on the selected row number and choose "Insert" from the context menu. Alternatively, go to the "Home" tab, click the "Insert" dropdown in the "Cells" group, and choose "Insert Sheet Rows."
+
+2.Inserting New Columns:
+
+Select the column to the right of where you want to insert new columns.
+Right-click on the selected column letter and choose "Insert" from the context menu. Alternatively, go to the "Home" tab, click the "Insert" dropdown in the "Cells" group, and choose "Insert Sheet Columns."
+
+In Both Excel and Google Sheets:
+
+You can also use keyboard shortcuts. For example, in Excel, pressing "Ctrl" + "+" (plus key) will insert a new row or column depending on the current selection. In Google Sheets, pressing "Ctrl" + "Alt" + "+" (plus key) will do the same.
+When you insert new rows or columns into a table, the existing data will shift to accommodate the new space. If your table has headers, they will usually remain unaffected, and you might need to update any formulas or references that refer to the table's size or range.
+
+
+5. How do you hide and unhide columns in excel?
+
+You can easily hide and unhide columns in Microsoft Excel using the following steps:
+
+1.Hiding Columns:
+
+Select the column(s) that you want to hide. You can do this by clicking on the column letter(s) at the top of the spreadsheet.
+
+Right-click on the selected column header(s).
+
+From the context menu that appears, choose "Hide" (or "Hide Columns" in some versions of Excel).
+
+2.Unhiding Columns:
+
+To unhide a single column, click on the column letters to the left and right of the hidden column. This will select both adjacent columns.
+
+Right-click on the selected columns.
+
+From the context menu, choose "Unhide."
+
+If you have multiple hidden columns and want to unhide them all at once, select the columns on both sides of the hidden range, right-click, and choose "Unhide."
+
+3.Unhiding Columns Using the Ribbon :
+
+Select the entire worksheet by clicking the square between the row numbers and column letters (above the row numbers and to the left of the column letters).
+
+Go to the "Home" tab in the Excel ribbon.
+
+In the "Cells" group, click on the "Format" dropdown.
+
+Choose "Hide & Unhide" from the dropdown menu, and then select "Unhide Columns."
+
+4.Unhiding Columns Using the Name Box:
+
+Click on the "Name Box" (located to the left of the formula bar) and type the reference of the hidden column(s) you want to unhide (e.g., "A:A" for column A).
+
+Press "Enter." This will select the entire column.
+
+Right-click on the selected column header and choose "Unhide."
+
+
+6. Create an appropriate table within the worksheet and use different
+functions available in the AutoSum command.
+
+ an example of how you can create a table in Excel and use different functions available in the AutoSum command:
+
+Let's say you have a worksheet with the following data, representing sales data for a store:
+
+Date	    ProductQuantity  Sold	Unit Price
+2023-08-01	Product  A	      100         $10
+2023-08-02	Product  B	      75	      $15
+2023-08-03	Product  A	      120	      $10
+2023-08-04	Product  B        90	      $15
+To perform various calculations using the AutoSum command, you can follow these steps:
+
+1.Create a Table:
+
+Select the data range (including headers) and press "Ctrl + T" to create a table. Ensure that "My table has headers" is checked in the Create Table dialog box.
+
+2.Use AutoSum for Sum:
+
+In the "Quantity Sold" column, click on the cell below the last entry (e.g., B5). Then, go to the "Table Tools Design" tab (this tab appears when you have a table selected), and click on the "Total Row" checkbox to add a total row.
+
+In the "Total Row," click on the cell in the "Quantity Sold" column, and you'll see a dropdown arrow. Click on the arrow, and from the list of functions, select "Sum." Excel will automatically calculate and display the sum of the "Quantity Sold" column in this cell.
+
+3.Use AutoSum for Average:
+
+In the "Unit Price" column, click on the cell in the "Total Row," and from the dropdown list of functions, select "Average." Excel will calculate and display the average unit price.
+
+4.Use AutoSum for Count:
+
+In the "Total Row," click on the cell in the "Date" column, and from the dropdown list of functions, select "Count." Excel will count the number of entries in the "Date" column and display the result.
+
+Now, your table should look something like this (with calculated values):
+
+Date	    ProductQuantity    Sold	   Unit Price
+2023-08-01	Product A	       100	        $10
+2023-08-02	Product B	       75	        $15
+2023-08-03	Product A	       120	        $10
+2023-08-04	Product B	       90	        $15
+Total		                   385	        $12.50
+Average   $12.50
+Count		4	
+This demonstrates how you can use the AutoSum command to quickly perform calculations such as sum, average, and count within a table in Excel. The AutoSum feature makes it easy to perform common calculations without manually entering formulas.
