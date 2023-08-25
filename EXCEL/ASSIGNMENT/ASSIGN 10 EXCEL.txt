@@ -1,0 +1,94 @@
+1. See the below picture and create the exact table with exact formatting.
+Font – ‘Times New Roman’ Size – 14, Color of first line Orange.
+
+RollNo Name of the student  Sub-1 Sub-2 Sub-3 Sub-4 Sub-5 Sub-6
+100101 Rohan                  72   55    52    69    95   32
+100102 Mohan                  65   51    63    85    71   69
+100103 Ravi                   72   56    78    85    47   68
+100104 Ruby                   68   71    85    84    78   60
+100105 Radhika                80   78    58    65    68   45
+100106 Rakhi                  61   78    45    62    75   64
+100107 David                  78   69    96    52    63   87
+100108 Monika                 96   85    86    84    45   63
+100109 Tommy                  75   63    54    63    61   98
+100110 Rakesh                 63   52    96    87    78   45
+
+
+
+Answer:
+
+RollNo.   Name of the student   Sub-1  Sub-2  Sub-3  Sub-4  Sub-5  Sub-6
+100101    Rohan                 72     55     52     69     95     32
+100102    Mohan                 65     51     63     85     71     69
+100103    Ravi                  72     56     78     85     47     68
+100104    Ruby                  68     71     85     84     78     60
+100105    Radhika               80     78     58     65     68     45
+100106    Rakhi                 61     78     45     62     75     64
+100107    David                 78     69     96     52     63     87
+100108    Monika                96     85     86     84     45     63
+100109    Tommy                 75     63     54     63     61     98
+100110    Rakesh                63     52     96     87     78     45
+
+
+
+2. From the above table use Sum Formula and find the total for each
+student.
+
+To calculate the total for each student using a SUM formula, you can follow these steps:
+
+Assuming your table is located in cells A1 to G11 (with the headers in the first row and data starting from the second row), you can enter the following formula in cell H2 to calculate the total for the first student (Rohan):
+
+=SUM(C2:G2)
+
+Then, drag this formula down for all the other students (Mohan, Ravi, Ruby, etc.). The cell references will adjust automatically for each student, and you will get the total for each student in the corresponding row in column H.
+
+For example, the formula in cell H3 will be:=SUM(C3:G3)
+
+You can continue this pattern for the rest of the students. This will give you the total marks for each student across subjects.
+
+
+
+3. Calculate Average for each student in the next row. Use Formulas.
+
+To calculate the average for each student using a formula, follow these steps:
+
+Assuming your table is located in cells A1 to G11 (with the headers in the first row and data starting from the second row), you can enter the following formula in cell H12 to calculate the average for the first student (Rohan):
+=AVERAGE(C2:G2)
+Then, drag this formula across for all the other students (Mohan, Ravi, Ruby, etc.). The cell references will adjust automatically for each student, and you will get the average for each student in the corresponding row in column H.
+
+For example, the formula in cell H13 will be:
+=AVERAGE(C3:G3)
+You can continue this pattern for the rest of the students. This will give you the average marks for each student across subjects.
+
+
+4. Calculate Rank for each student. Use Formulas.
+
+To calculate the rank for each student using a formula, follow these steps:
+
+Assuming your table is located in cells A1 to G11 (with the headers in the first row and data starting from the second row), you can enter the following formula in cell I2 to calculate the rank for the first student (Rohan):
+=RANK(H2, $H$2:$H$11, 0)
+Here, H2 refers to the total of the first student, and $H$2:$H$11 specifies the range of totals for all students. The 0 at the end of the formula specifies that you want the largest value to have the lowest rank.
+
+Then, drag this formula down for all the other students (Mohan, Ravi, Ruby, etc.). The cell references will adjust automatically for each student, and you will get the rank for each student in the corresponding row in column I.
+
+For example, the formula in cell I3 will be:
+=RANK(H3, $H$2:$H$11, 0)
+
+You can continue this pattern for the rest of the students. This will give you the rank for each student based on their total marks.
+
+
+5. Calculate Percentage for each student. Use Formulas. Round off the
+decimals up to 2 points.
+
+To calculate the percentage for each student using a formula and rounding off the decimals to 2 points, follow these steps:
+
+Assuming your table is located in cells A1 to G11 (with the headers in the first row and data starting from the second row), you can enter the following formula in cell J2 to calculate the percentage for the first student (Rohan):
+=ROUND((H2 / (G2 * 100)) * 100, 2)
+
+Here, H2 refers to the total marks of the first student, and G2 refers to the total marks possible for all subjects (assuming it's the same for all students). The formula calculates the percentage by dividing the total marks obtained by the total marks possible, and then multiplying by 100. The ROUND function is used to round off the result to 2 decimal places.
+
+Then, drag this formula down for all the other students (Mohan, Ravi, Ruby, etc.). The cell references will adjust automatically for each student, and you will get the percentage for each student in the corresponding row in column J.
+
+For example, the formula in cell J3 will be:
+=ROUND((H3 / (G3 * 100)) * 100, 2)
+You can continue this pattern for the rest of the students. This will give you the percentage for each student rounded off to 2 decimal places.
