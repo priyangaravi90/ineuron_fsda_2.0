@@ -1,0 +1,119 @@
+1.How many seconds are in an hour? Use the interactive interpreter as a calculator and multiply the
+number of seconds in a minute (60) by the number of minutes in an hour (also 60).
+sol. 60
+
+60 seconds/minute * 60 minutes/hour = 3600 seconds/hour
+
+So, there are 3600 seconds in an hour.
+
+
+2. Assign the result from the previous task (seconds in an hour) to a variable called
+seconds_per_hour.
+
+here's how you can assign the value of 3600 seconds to a variable called seconds_per_hour in Python:
+seconds_per_hour = 3600
+
+Now, the variable seconds_per_hour holds the value 3600. You can use this variable in your code to represent the number of seconds in an hour.
+
+
+3. How many seconds do you think there are in a day? Make use of the variables seconds per hour
+and minutes per hour.
+
+To calculate the number of seconds in a day, you can use the variables seconds_per_hour and minutes_per_hour that you've already defined. Since there are 24 hours in a day, you can multiply the number of seconds per hour by 24:
+
+seconds_per_hour = 3600
+hours_per_day = 24
+seconds_per_day = seconds_per_hour * hours_per_day
+print(seconds_per_day)
+
+This will output: 86400
+
+So, there are 86,400 seconds in a day.
+
+
+4. Calculate seconds per day again, but this time save the result in a variable called seconds_per_day
+
+Here's how you can calculate the number of seconds in a day and save the result in a variable called seconds_per_day:
+
+seconds_per_hour = 3600
+hours_per_day = 24
+seconds_per_day = seconds_per_hour * hours_per_day
+print(seconds_per_day)
+
+Now, the variable seconds_per_day holds the value 86,400, which is the number of seconds in a day.
+
+
+5. Divide seconds_per_day by seconds_per_hour. Use floating-point (/) division.
+
+To divide seconds_per_day by seconds_per_hour using floating-point division, you can do the following:
+
+seconds_per_hour = 3600
+seconds_per_day = 86400
+
+result = seconds_per_day / seconds_per_hour
+print(result)
+
+The output will be: 24.0
+So, dividing the number of seconds in a day by the number of seconds in an hour gives you 24.0, indicating that there are 24 hours in a day.
+
+
+6. Divide seconds_per_day by seconds_per_hour, using integer (//) division. Did this number agree
+with the floating-point value from the previous question, aside from the final .0?
+
+When you use integer division (//), any fractional part of the result is truncated, so you'll get a whole number result. Let's calculate the division using integer division:
+
+
+seconds_per_hour = 3600
+seconds_per_day = 86400
+result_integer_division = seconds_per_day // seconds_per_hour
+print(result_integer_division)
+
+The output will be:24
+
+
+The result is indeed 24, which agrees with the previous floating-point division result of 24.0, aside from the decimal part. So, the value of 24 hours in a day remains consistent.
+
+
+
+
+
+7. Write a generator, genPrimes, that returns the sequence of prime numbers on successive calls to
+its next() method: 2, 3, 5, 7, 11, ...
+
+An implementation of the genPrimes generator that yields the sequence of prime numbers on successive calls to its next() method:
+
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+def genPrimes():
+    yield 2
+    yield 3
+    num = 5
+    while True:
+        if is_prime(num):
+            yield num
+        num += 2
+
+# Example usage
+prime_generator = genPrimes()
+for _ in range(10):
+    print(next(prime_generator))
+
+This code defines a genPrimes generator that yields prime numbers using the is_prime function to check for primality. It starts by yielding 2 and 3, and then it generates successive odd numbers and checks if they're prime. The for loop demonstrates how to use the generator to print the first 10 prime numbers.
+
+
+
+
+
