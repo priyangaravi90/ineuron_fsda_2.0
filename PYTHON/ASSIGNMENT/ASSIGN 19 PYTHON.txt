@@ -1,0 +1,275 @@
+1. Make a class called Thing with no contents and print it. Then, create an object called example
+from this class and also print it. Are the printed values the same or different?
+
+here's how you can create the Thing class, instantiate an object from it, and print them:
+class Thing:
+    pass
+
+# Creating an instance of the Thing class
+example = Thing()
+
+print(Thing)
+print(example)
+The printed values will be different:
+The first print(Thing) statement will print something like <class '__main__.Thing'>, indicating the class itself.
+The second print(example) statement will print something like <__main__.Thing object at 0x...>, indicating an instance of the class.
+The first print statement refers to the class Thing itself, while the second print statement refers to an object (example) created from the Thing class.
+
+
+
+2. Create a new class called Thing2 and add the value 'abc' to the letters class attribute. Letters
+should be printed.
+
+Here's how you can create the Thing2 class with a class attribute letters containing the value 'abc', and then print the letters attribute:
+
+
+class Thing2:
+    letters = 'abc'
+
+print(Thing2.letters)
+When you run this code, it will print:
+abc
+
+The letters attribute is a class attribute, meaning it belongs to the class itself rather than instances of the class. So you access it using the class name (Thing2) followed by the attribute name (letters).
+
+
+3. Make yet another class called, of course, Thing3. This time, assign the value 'xyz' to an instance
+(object) attribute called letters. Print letters. Do you need to make an object from the class to do
+this?
+
+Here's how you can create the Thing3 class and assign the value 'xyz' to an instance attribute called letters, and then print the letters attribute:
+
+
+class Thing3:
+    def __init__(self):
+        self.letters = 'xyz'
+
+example = Thing3()  # Creating an instance of the Thing3 class
+print(example.letters)
+
+In this case, you do need to create an instance (object) of the Thing3 class using example = Thing3() before you can access and print the instance attribute letters. The value 'xyz' is assigned to the letters attribute when an object of the class is created, and you access it using the dot notation (example.letters).
+
+
+
+
+
+4. Create an Element class with the instance attributes name, symbol, and number. Create a class
+object with the values 'Hydrogen', 'H', and 1.
+
+Sure, here's how you can create the Element class with the instance attributes name, symbol, and number, and then create a class object with the values 'Hydrogen', 'H', and 1:
+
+class Element:
+    def __init__(self, name, symbol, number):
+        self.name = name
+        self.symbol = symbol
+        self.number = number
+
+# Creating a class object with the values 'Hydrogen', 'H', and 1
+hydrogen = Element('Hydrogen', 'H', 1)
+
+In this code, the Element class has an __init__ method that takes three arguments (name, symbol, and number) and assigns them to the instance attributes. Then, an object named hydrogen is created from the Element class with the specified values.
+
+
+
+
+5. Make a dictionary with these keys and values: 'name': 'Hydrogen', 'symbol': 'H', 'number': 1. Then,
+create an object called hydrogen from class Element using this dictionary.
+
+how you can create a dictionary with the given keys and values, and then use that dictionary to create an object called hydrogen from the Element class:
+
+class Element:
+    def __init__(self, name, symbol, number):
+        self.name = name
+        self.symbol = symbol
+        self.number = number
+
+# Creating a dictionary with the keys and values
+element_data = {
+    'name': 'Hydrogen',
+    'symbol': 'H',
+    'number': 1
+}
+
+# Creating an object from the Element class using the dictionary
+hydrogen = Element(**element_data)
+
+In this code, the **element_data syntax unpacks the dictionary and passes its key-value pairs as arguments to the __init__ method of the Element class, effectively creating an instance of the class with the provided attributes.
+
+
+
+6. For the Element class, define a method called dump() that prints the values of the object’s
+attributes (name, symbol, and number). Create the hydrogen object from this new definition and
+use dump() to print its attributes.
+
+Here's how you can define a method called dump() within the Element class to print the values of the object's attributes (name, symbol, and number), and then use the dump() method to print the attributes of the hydrogen object:
+
+
+class Element:
+    def __init__(self, name, symbol, number):
+        self.name = name
+        self.symbol = symbol
+        self.number = number
+    
+    def dump(self):
+        print("Name:", self.name)
+        print("Symbol:", self.symbol)
+        print("Number:", self.number)
+
+# Creating the hydrogen object from the Element class
+hydrogen = Element('Hydrogen', 'H', 1)
+
+# Using the dump() method to print the attributes of the hydrogen object
+hydrogen.dump()
+When you run this code, it will print:
+Name: Hydrogen
+Symbol: H
+Number: 1
+
+The dump() method defined in the Element class is used to display the values of the object's attributes in a structured format.
+
+
+
+7. Call print(hydrogen). In the definition of Element, change the name of method dump to __str__,
+create a new hydrogen object, and call print(hydrogen) again.
+
+how you can modify the Element class to use the __str__ method to control the string representation of the object and then create a new hydrogen object and print it using the print() function:
+
+class Element:
+    def __init__(self, name, symbol, number):
+        self.name = name
+        self.symbol = symbol
+        self.number = number
+    
+    def __str__(self):
+        return f"Name: {self.name}, Symbol: {self.symbol}, Number: {self.number}"
+
+# Creating a new hydrogen object from the Element class
+hydrogen = Element('Hydrogen', 'H', 1)
+
+# Printing the hydrogen object using the print() function
+print(hydrogen)
+With the __str__ method defined, when you use the print() function on the hydrogen object, it will call the __str__ method and print the formatted string representation of the object's attributes:
+
+
+Name: Hydrogen, Symbol: H, Number: 1
+
+
+
+
+8. Modify Element to make the attributes name, symbol, and number private. Define a getter
+property for each to return its value.
+
+how you can modify the Element class to make the attributes name, symbol, and number private and define getter properties for each attribute to return their values:
+
+class Element:
+    def __init__(self, name, symbol, number):
+        self.__name = name
+        self.__symbol = symbol
+        self.__number = number
+    
+    @property
+    def name(self):
+        return self.__name
+    
+    @property
+    def symbol(self):
+        return self.__symbol
+    
+    @property
+    def number(self):
+        return self.__number
+    
+    def __str__(self):
+        return f"Name: {self.__name}, Symbol: {self.__symbol}, Number: {self.__number}"
+
+# Creating a new hydrogen object from the Element class
+hydrogen = Element('Hydrogen', 'H', 1)
+
+# Using the getter properties to access the private attributes
+print(hydrogen.name)
+print(hydrogen.symbol)
+print(hydrogen.number)
+
+In this code, the double underscore (__) prefix before the attribute names makes them private. The getter properties (@property decorators) allow you to access these private attributes from outside the class while still maintaining encapsulation.
+
+
+
+
+
+9. Define three classes: Bear, Rabbit, and Octothorpe. For each, define only one method: eats(). This
+should return 'berries' (Bear), 'clover' (Rabbit), or 'campers' (Octothorpe). Create one object from
+each and print what it eats.
+
+Here's how you can define the Bear, Rabbit, and Octothorpe classes with their respective eats() methods, create objects from each class, and print what they eat:
+
+
+class Bear:
+    def eats(self):
+        return 'berries'
+
+class Rabbit:
+    def eats(self):
+        return 'clover'
+
+class Octothorpe:
+    def eats(self):
+        return 'campers'
+
+# Creating objects from each class
+bear = Bear()
+rabbit = Rabbit()
+octothorpe = Octothorpe()
+
+# Printing what each object eats
+print("Bear eats:", bear.eats())
+print("Rabbit eats:", rabbit.eats())
+print("Octothorpe eats:", octothorpe.eats())
+When you run this code, it will print:
+Bear eats: berries
+Rabbit eats: clover
+Octothorpe eats: campers
+
+Each class has a method called eats() that returns a specific food item, and by calling this method on objects of each class, you can determine what each object "eats."
+
+
+10. Define these classes: Laser, Claw, and SmartPhone. Each has only one method: does(). This
+returns &#39;disintegrate&#39; (Laser), &#39;crush&#39; (Claw), or &#39;ring&#39; (SmartPhone). Then, define the class Robot that
+has one instance (object) of each of these. Define a does() method for the Robot that prints what its
+component objects do.
+
+Here's how you can define the Laser, Claw, SmartPhone, and Robot classes with their respective does() methods, and then define a does() method for the Robot class to print what its component objects do:
+
+
+class Laser:
+    def does(self):
+        return 'disintegrate'
+
+class Claw:
+    def does(self):
+        return 'crush'
+
+class SmartPhone:
+    def does(self):
+        return 'ring'
+
+class Robot:
+    def __init__(self):
+        self.laser = Laser()
+        self.claw = Claw()
+        self.smartphone = SmartPhone()
+    
+    def does(self):
+        laser_action = self.laser.does()
+        claw_action = self.claw.does()
+        smartphone_action = self.smartphone.does()
+        return f"Laser: {laser_action}, Claw: {claw_action}, SmartPhone: {smartphone_action}"
+
+# Creating a Robot object
+robot = Robot()
+
+# Printing what the Robot's component objects do
+print(robot.does())
+When you run this code, it will print:
+Laser: disintegrate, Claw: crush, SmartPhone: ring
+
+The Robot class has an instance of each component class (Laser, Claw, SmartPhone), and the does() method of the Robot class calls the does() methods of its component objects to print what each component does.
