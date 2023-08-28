@@ -1,0 +1,115 @@
+1. Create a zoo.py file first. Define the hours() function, which prints the string "Open 9-5 daily".
+Then, use the interactive interpreter to import the zoo module and call its hours() function.
+
+I can definitely guide you through creating the zoo.py file and using the interactive interpreter to import and call the hours() function. Here's how you can do it:
+
+Step 1: Create the zoo.py file
+Open a text editor and create a file named zoo.py. In this file, define the hours() function as follows:
+# zoo.py
+def hours():
+    print('Open 9-5 daily')
+Save the file in a location of your choice.
+
+Step 2: Use the interactive interpreter
+Now, you can open your Python interpreter to import and use the zoo module. Follow these steps:
+Open your terminal or command prompt.
+Start the Python interpreter by typing python or python3 and pressing Enter.
+Import the zoo module by typing the following command and pressing Enter:
+import zoo
+Call the hours() function using the module name followed by the function name:
+zoo.hours()
+You should see the output Open 9-5 daily printed on the screen, indicating that the hours() function from the zoo module was successfully imported and executed.
+
+Remember that both the zoo.py file and the Python interpreter should be in the same directory for this to work seamlessly.
+
+
+2. In the interactive interpreter, import the zoo module as menagerie and call its hours() function.
+
+To import the zoo module as menagerie in the interactive interpreter and call its hours() function, follow these steps:
+
+Open your terminal or command prompt.
+Start the Python interpreter by typing python or python3 and pressing Enter.
+Import the zoo module as menagerie by typing the following command and pressing Enter:
+import zoo as menagerie
+Call the hours() function using the menagerie module name followed by the function name:
+menagerie.hours()
+You should see the output Open 9-5 daily printed on the screen, indicating that the hours() function from the zoo module (imported as menagerie) was successfully imported and executed. This allows you to use the alias menagerie instead of the original module name zoo.
+
+
+
+3. Using the interpreter, explicitly import and call the hours() function from zoo.
+
+You can explicitly import and call the hours() function from the zoo module in the Python interpreter using the following steps:
+
+Open your terminal or command prompt.
+Start the Python interpreter by typing python or python3 and pressing Enter.
+Import the hours() function directly from the zoo module by typing the following command and pressing Enter:
+from zoo import hours
+Call the hours() function directly:
+hours()
+You should see the output Open 9-5 daily printed on the screen, indicating that the hours() function from the zoo module was explicitly imported and executed. This method directly imports the function into the current namespace, so you can call it without needing to use the module name.
+
+
+4. Import the hours() function as info and call it.
+
+You can import the hours() function from the zoo module and give it the alias info. Here's how you can do it in the Python interpreter:
+Open your terminal or command prompt.
+Start the Python interpreter by typing python or python3 and pressing Enter.
+Import the hours() function from the zoo module and give it the alias info by typing the following command and pressing Enter:
+from zoo import hours as info
+Call the info() function directly:
+info()
+You should see the output Open 9-5 daily printed on the screen, indicating that the hours() function from the zoo module (imported as info) was successfully imported with the alias and executed. This method allows you to use the alias info instead of the original function name.
+
+
+
+
+
+5. Create a plain dictionary with the key-value pairs &#39;a&#39;: 1, &#39;b&#39;: 2, and &#39;c&#39;: 3, and print it out.
+
+Sure, you can create a plain dictionary with the key-value pairs you mentioned and print it out using the following Python code:
+# Create the dictionary
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+# Print out the dictionary
+print(my_dict)
+When you run this code, it will output:
+{'a': 1, 'b': 2, 'c': 3}
+
+This indicates that the dictionary was successfully created and printed with the specified key-value pairs.
+
+
+6.Make an OrderedDict called fancy from the same pairs listed in 5 and print it. Did it print in the
+same order as plain?
+
+Sure, you can use the collections module to create an OrderedDict and see how the order of insertion is preserved. Here's how you can create an OrderedDict called fancy with the same key-value pairs and print it:
+from collections import OrderedDict
+# Create an OrderedDict
+fancy = OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+# Print out the OrderedDict
+print(fancy)
+
+When you run this code, it will output:
+OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+Yes, the OrderedDict preserves the order of insertion, so the key-value pairs are printed in the same order as they were inserted. In contrast, a regular dictionary (dict in Python) may not maintain a specific order in its output.
+
+
+7. Make a default dictionary called dict_of_lists and pass it the argument list. Make the list
+dict_of_lists[&#39;a&#39;] and append the value &#39;something for a&#39; to it in one assignment. Print
+dict_of_lists[&#39;a&#39;].
+
+You can use the collections module to create a defaultdict with a default value of a list. Then, you can append a value to the list associated with a specific key. Here's how you can do it:
+
+from collections import defaultdict
+
+# Create a defaultdict with default values as lists
+dict_of_lists = defaultdict(list)
+
+# Append a value to the list associated with key 'a'
+dict_of_lists['a'].append('something for a')
+
+# Print the value associated with key 'a'
+print(dict_of_lists['a'])
+When you run this code, it will output:
+['something for a']
+
+The defaultdict ensures that the list is created and associated with the key 'a' if it doesn't exist, and then the value 'something for a' is appended to the list.
