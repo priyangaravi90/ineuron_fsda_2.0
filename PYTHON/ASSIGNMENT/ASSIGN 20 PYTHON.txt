@@ -1,0 +1,237 @@
+1. Set the variable test1 to the string &#39;This is a test of the emergency text system,&#39; and save test1 to a
+file named test.txt.
+
+Below is an example of how you can achieve this in Python:
+test1 = 'This is a test of the emergency text system.'
+with open('test.txt', 'w') as file:
+    file.write(test1)
+In this code, the variable test1 is assigned the specified string, and then it's written to a file named "test.txt" using the open function in write mode ('w'). The with statement is used to ensure proper file handling, including closing the file after writing.
+
+
+2. Read the contents of the file test.txt into the variable test2. Is there a difference between test 1
+and test 2?
+
+Here's how you can read the contents of the "test.txt" file into the variable test2 in Python:
+with open('test.txt', 'r') as file:
+    test2 = file.read()
+
+print(test2)
+After running this code, the content of the file "test.txt" will be read into the variable test2. You can then print the contents of test2 to see if there is any difference between test1 and test2.
+
+However, if you've followed the previous instruction and wrote the contents of test1 to "test.txt" without any modification, then test1 and test2 should have the same content, and there should be no difference between them.
+
+
+3. Create a CSV file called books.csv by using these lines:
+title,author,year
+The Weirdstone of Brisingamen,Alan Garner,1960
+Perdido Street Station,China Miéville,2000
+Thud!,Terry Pratchett,2005
+The Spellman Files,Lisa Lutz,2007
+Small Gods,Terry Pratchett,1992
+
+You can create a CSV file named "books.csv" with the provided data using the following Python code:
+import csv
+
+data = [
+    ["title", "author", "year"],
+    ["The Weirdstone of Brisingamen", "Alan Garner", 1960],
+    ["Perdido Street Station", "China Miéville", 2000],
+    ["Thud!", "Terry Pratchett", 2005],
+    ["The Spellman Files", "Lisa Lutz", 2007],
+    ["Small Gods", "Terry Pratchett", 1992]
+]
+
+with open('books.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerows(data)
+
+This code uses the csv module to write the provided data to a CSV file named "books.csv". The newline='' argument is used to ensure that the correct line endings are used in the CSV file. Each row of data is represented as a list within the data list, and the writerows method is used to write all the rows to the CSV file.
+
+
+
+
+
+4. Use the sqlite3 module to create a SQLite database called books.db, and a table called books with
+these fields: title (text), author (text), and year (integer).
+
+Here's how you can use the sqlite3 module in Python to create an SQLite database named "books.db" and a table named "books" with the specified fields:
+
+import sqlite3
+
+# Connect to the database (it will be created if it doesn't exist)
+conn = sqlite3.connect('books.db')
+
+# Create a cursor object to interact with the database
+cursor = conn.cursor()
+
+# Create the "books" table
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS books (
+        title TEXT,
+        author TEXT,
+        year INTEGER
+    )
+''')
+
+# Commit the changes and close the connection
+conn.commit()
+conn.close()
+In this code, the sqlite3.connect() function is used to establish a connection to the SQLite database named "books.db". The cursor() method creates a cursor object that you can use to execute SQL commands. The execute() method is used to run SQL statements, and in this case, it creates the "books" table with the specified fields.
+
+Finally, the changes are committed using conn.commit() and the connection is closed with conn.close(). The table will be created if it doesn't exist, so you can run this code whenever you need to ensure that the table structure is in place.
+
+
+5. Read books.csv and insert its data into the book table.
+
+You can use the csv module along with the sqlite3 module to read the data from "books.csv" and insert it into the "books" table in the "books.db" SQLite database. Here's how you can do that:
+
+import csv
+import sqlite3
+
+# Connect to the database
+conn = sqlite3.connect('books.db')
+cursor = conn.cursor()
+
+# Read data from CSV and insert into the database
+with open('books.csv', 'r') as csv_file:
+    csv_reader = csv.reader(csv_file)
+    next(csv_reader)  # Skip the header row
+
+    for row in csv_reader:
+        title, author, year = row
+        cursor.execute('INSERT INTO books (title, author, year) VALUES (?, ?, ?)', (title, author, year))
+
+# Commit the changes and close the connection
+conn.commit()
+conn.close()
+This code reads the data from "books.csv" using the csv.reader() and iterates through the rows. It extracts the title, author, and year from each row and uses a parameterized query to insert the data into the "books" table. Finally, the changes are committed and the connection is closed.
+
+Make sure that both the "books.db" database and "books.csv" file are in the same directory as this script when you run it.
+
+
+
+
+
+6. Select and print the title column from the book table in alphabetical order.
+
+Here's how you can select and print the "title" column from the "books" table in alphabetical order using the sqlite3 module:
+
+import sqlite3
+
+# Connect to the database
+conn = sqlite3.connect('books.db')
+cursor = conn.cursor()
+
+# Select and print the title column in alphabetical order
+cursor.execute('SELECT title FROM books ORDER BY title ASC')
+titles = cursor.fetchall()
+
+for title in titles:
+    print(title[0])
+
+# Close the connection
+conn.close()
+In this code, the SELECT statement retrieves the "title" column from the "books" table and orders the results in ascending alphabetical order using the ORDER BY clause. The fetchall() method retrieves all the selected rows as a list of tuples. Since you are only selecting one column ("title"), you can directly print the elements of the resulting list.
+
+Remember to have the "books.db" database in the same directory as this script when you run it.
+
+
+7. From the book table, select and print all columns in the order of publication.
+
+Certainly! To select and print all columns from the "books" table in the order of publication, you would modify the SQL query to include all columns and use the ORDER BY clause based on the "year" column. Here's how you can do that using the sqlite3 module:
+
+import sqlite3
+
+# Connect to the database
+conn = sqlite3.connect('books.db')
+cursor = conn.cursor()
+
+# Select and print all columns in the order of publication
+cursor.execute('SELECT * FROM books ORDER BY year ASC')
+books = cursor.fetchall()
+
+for book in books:
+    print(book)
+
+# Close the connection
+conn.close()
+In this code, the SELECT statement with * retrieves all columns from the "books" table. The ORDER BY clause orders the results based on the "year" column in ascending order. The fetchall() method retrieves all selected rows, and you can iterate through them to print each row.
+
+Remember to have the "books.db" database in the same directory as this script when you run it.
+
+
+8. Use the sqlalchemy module to connect to the sqlite3 database books.db that you just made in
+exercise 6.
+
+You can use the SQLAlchemy library to connect to the SQLite database "books.db". Here's how you can establish a connection using SQLAlchemy:
+from sqlalchemy import create_engine
+
+# Create a SQLAlchemy engine to connect to the database
+engine = create_engine('sqlite:///books.db')
+
+# Connect to the database
+connection = engine.connect()
+
+# Perform database operations here
+
+# Close the connection
+connection.close()
+In this code, the create_engine() function from SQLAlchemy is used to create an engine that connects to the SQLite database "books.db". The connection is then established using the engine.connect() method. You can perform various database operations using this connection.
+
+Don't forget to install the SQLAlchemy library using pip install sqlalchemy if you haven't already.
+
+
+
+
+
+9. Install the Redis server and the Python redis library (pip install redis) on your computer. Create a
+Redis hash called test with the fields count (1) and name ('Fester Bestertester'). Print all the fields for
+test.
+
+To achieve this, follow these steps:
+
+Install Redis Server: You'll need to install Redis Server on your computer. You can download it from the official Redis website (https://redis.io/download) or use a package manager like Homebrew (on macOS/Linux) or Chocolatey (on Windows) to install it.
+
+Install Redis Python Library: Open a terminal and run the following command to install the Redis Python library:
+
+pip install redis
+Create a Redis Hash and Print Fields:
+
+Now, you can use the following Python code to create a Redis hash called "test" with the specified fields and values, and then print all the fields for "test":
+import redis
+
+# Connect to the Redis server
+r = redis.Redis(host='localhost', port=6379, db=0)
+
+# Create a Redis hash called "test"
+r.hset('test', 'count', 1)
+r.hset('test', 'name', 'Fester Bestertester')
+
+# Print all the fields for "test"
+fields = r.hgetall('test')
+for field, value in fields.items():
+    print(f"{field.decode('utf-8')}: {value.decode('utf-8')}")
+Make sure that your Redis server is running and accessible on the specified host and port (localhost:6379 by default). Adjust the host and port in the redis.Redis() function if needed.
+
+Remember that Redis is an in-memory data store, and any data you store in it will be lost if the server is restarted.
+
+
+
+
+
+10. Increment the count field of test and print it.
+
+ You can increment the "count" field of the "test" hash in Redis and then print its updated value. Here's how you can do that using the Python Redis library:
+
+
+import redis
+
+# Connect to the Redis server
+r = redis.Redis(host='localhost', port=6379, db=0)
+
+# Increment the "count" field of the "test" hash
+incremented_value = r.hincrby('test', 'count', 1)
+
+# Print the updated value of the "count" field
+print(f"Updated count: {incremented_value}")
+In this code, the hincrby() function is used to increment the value of the "count" field by 1 within the "test" hash. The updated value is then printed to the console.
