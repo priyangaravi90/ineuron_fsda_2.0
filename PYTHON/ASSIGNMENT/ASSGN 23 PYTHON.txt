@@ -1,0 +1,122 @@
+1. What is the result of the code, and why?
+>>> def func(a, b=6, c=8):
+print(a, b, c)
+>>> func(1, 2)
+
+The given code defines a function func with three parameters: a, b, and c. The parameters b and c have default values of 6 and 8, respectively. When you call the function func(1, 2), you are providing values for the parameters a and b, and the default value for c will be used.
+
+Here's the breakdown of the function call:
+
+a is assigned the value 1 (from the argument).
+b is assigned the value 2 (from the argument).
+Since no value is provided for c, it takes its default value of 8.
+Therefore, the function call func(1, 2) will output:
+1 2 8
+
+The print statement inside the function prints the values of a, b, and c, which are 1, 2, and 8 respectively.
+
+
+2. What is the result of this code, and why?
+>>> def func(a, b, c=5):
+print(a, b, c)
+>>> func(1, c=3, b=2)
+
+The given code defines a function func with three parameters: a, b, and c. The parameter c has a default value of 5. When you call the function func(1, c=3, b=2), you are providing values for all three parameters explicitly.
+
+Here's the breakdown of the function call:
+a is assigned the value 1 (from the first argument).
+b is assigned the value 2 (from the keyword argument b=2).
+c is assigned the value 3 (from the keyword argument c=3), overriding its default value.
+Therefore, the function call func(1, c=3, b=2) will output:
+1 2 3
+
+The print statement inside the function prints the values of a, b, and c, which are 1, 2, and 3 respectively.
+
+
+3. How about this code: what is its result, and why?
+>>> def func(a, *pargs):
+print(a, pargs)
+>>> func(1, 2, 3)
+
+In this code, the function func has a parameter a and a special parameter *pargs, which allows the function to accept a variable number of positional arguments after the first argument a. These additional positional arguments are collected into a tuple called pargs.
+
+When you call the function func(1, 2, 3), you are providing three positional arguments: 1, 2, and 3. The first argument 1 is assigned to parameter a, and the rest of the arguments (2 and 3) are collected into the pargs tuple.
+
+Therefore, the function call func(1, 2, 3) will output:
+1 (2, 3)
+
+The print statement inside the function prints the value of a (which is 1) and the contents of the pargs tuple (which are 2 and 3).
+
+
+4. What does this code print, and why?
+>>> def func(a, **kargs):
+print(a, kargs)
+>>> func(a=1, c=3, b=2)
+
+In this code, the function func has a parameter a and a special parameter **kargs, which allows the function to accept a variable number of keyword arguments after the first argument a. These additional keyword arguments are collected into a dictionary called kargs.
+
+When you call the function func(a=1, c=3, b=2), you are providing three keyword arguments: a with the value 1, c with the value 3, and b with the value 2. The keyword arguments (excluding the first positional argument a) are collected into the kargs dictionary.
+
+Therefore, the function call func(a=1, c=3, b=2) will output:
+1 {'c': 3, 'b': 2}
+
+The print statement inside the function prints the value of a (which is 1) and the contents of the kargs dictionary (which contains the keyword arguments 'c': 3 and 'b': 2).
+
+
+5. What gets printed by this, and explain?
+>>> def func(a, b, c=8, d=5): print(a, b, c, d)
+>>> func(1, *(5, 6))
+
+def func(a, b, c=8, d=5):
+    print(a, b, c, d)
+func(1, *(5, 6))
+In this code, the function func is defined with four parameters: a, b, c, and d. The parameters c and d have default values of 8 and 5 respectively.
+
+The line func(1, *(5, 6)) calls the function func with arguments 1, 5, and 6. The * operator before (5, 6) unpacks the tuple into separate arguments.
+
+So, the function call will be equivalent to func(1, 5, 6). The values 1, 5, and 6 are assigned to a, b, and c respectively, and since no value is provided for d, it takes its default value of 5.
+
+Therefore, the output of the function call will be:
+1 5 6 5
+
+
+
+6. what is the result of this, and explain?
+>>> def func(a, b, c): a = 2; b[0] = 'x'; c['a'] = 'y'
+>>> l=1; m=[1]; n={'a':0}
+>>> func(l, m, n)
+
+Let's break down the code step by step:
+def func(a, b, c):
+    a = 2
+    b[0] = 'x'
+    c['a'] = 'y'
+
+l = 1
+m = [1]
+n = {'a': 0}
+func(l, m, n)
+You define a function func that takes three parameters: a, b, and c. Inside the function, you set a to 2, change the first element of list b to 'x', and set the value associated with the key 'a' in dictionary c to 'y'.
+
+You define three variables:
+
+l is assigned the integer value 1.
+m is assigned a list containing a single element, which is the integer 1.
+n is assigned a dictionary with a single key-value pair: 'a': 0.
+You call the function func with the arguments l, m, and n.
+
+Now, let's see how the function func modifies the variables:
+a is a parameter of the function, so assigning it a new value (2) inside the function does not affect the value of l outside the function.
+b is a list parameter of the function. When you modify the list by changing its first element to 'x', the change affects the list referred to by both m outside the function and b inside the function.
+c is a dictionary parameter of the function. When you set the value associated with key 'a' to 'y', it affects the dictionary referred to by both n outside the function and c inside the function.
+
+After the function call, the values of l, m, and n will be:
+l = 1
+m = ['x']  # The list is modified
+n = {'a': 'y'}  # The dictionary is modified
+
+So, outside the function:
+l remains 1.
+m is changed to ['x'].
+n is changed to {'a': 'y'}.
+
