@@ -1,0 +1,133 @@
+1. Add the current date to the text file today.txt as a string.
+
+from datetime import datetime
+
+current_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+with open('today.txt', 'a') as file:
+    file.write(current_date + '\n')
+Make sure the today.txt file is in the same directory as the script, or provide the appropriate path to the file in the open() function.
+
+
+2. Read the text file today.txt into the string today_string
+
+Here's how you can read the contents of the today.txt file into a string named today_string using Python:
+
+with open('today.txt', 'r') as file:
+    today_string = file.read()
+
+print(today_string)
+Replace 'today.txt' with the actual path to the file if it's not in the same directory as your script. The code above opens the file in read mode ('r'), reads its contents, and stores them in the today_string variable. Finally, it prints the content of the string.
+
+
+3. Parse the date from today_string.
+
+To parse the date from the today_string, you can use the datetime module in Python. Here's how you can do it:
+from datetime import datetime
+
+# Assuming today_string contains the date in the format 'YYYY-MM-DD HH:MM:SS'
+date_string = today_string.strip()  # Remove any leading/trailing whitespace
+
+# Parse the date string using the specified format
+parsed_date = datetime.strptime(date_string, '%Y-%m-%d %H:%M:%S')
+
+print(parsed_date)
+Replace 'YYYY-MM-DD HH:MM:SS' with the actual format of the date in your today_string. The strptime function is used to parse a string into a datetime object according to the specified format. The resulting parsed_date will be a datetime object that you can work with.
+
+
+
+4. List the files in your current directory
+
+I'm an AI language model and don't have direct access to the filesystem or directories on your computer. However, I can provide you with Python code that you can run on your local machine to list the files in your current directory using the os module:
+
+import os
+
+current_directory = os.getcwd()  # Get the current directory
+files_in_directory = os.listdir(current_directory)
+
+for file in files_in_directory:
+    print(file)
+This code imports the os module, gets the current directory using os.getcwd(), and then uses os.listdir() to obtain a list of files in that directory. It then iterates through the list and prints the name of each file.
+
+
+
+5. Create a list of all of the files in your parent directory (minimum five files should be available).
+
+I don't have direct access to my host's file system, so I can't access directories or files. However, I can provide you with the code you can run on your local machine to achieve this task. Here's how you can create a list of files in your parent directory using the os module in Python:
+
+import os
+
+parent_directory = os.path.dirname(os.getcwd())  # Get the parent directory
+files_in_parent = os.listdir(parent_directory)
+
+print(files_in_parent)
+This code uses the os.path.dirname() function to get the parent directory of your current working directory and then lists the files in that directory using os.listdir(). Make sure to run this code on your local machine to see the list of files in your parent directory.
+
+
+6. Use multiprocessing to create three separate processes. Make each one wait a random number of
+seconds between one and five, print the current time, and then exit.
+
+here's an example of how you could use the multiprocessing module in Python to create three separate processes that each wait for a random number of seconds between one and five, print the current time, and then exit:
+
+import multiprocessing
+import time
+import random
+from datetime import datetime
+
+def worker():
+    sleep_time = random.randint(1, 5)
+    print(f"Process {multiprocessing.current_process().name} will sleep for {sleep_time} seconds.")
+    time.sleep(sleep_time)
+    current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    print(f"Process {multiprocessing.current_process().name} woke up at {current_time}.")
+
+if __name__ == "__main__":
+    processes = []
+
+    for _ in range(3):
+        process = multiprocessing.Process(target=worker)
+        processes.append(process)
+        process.start()
+
+    for process in processes:
+        process.join()
+
+    print("All processes have finished.")
+In this code, each process is created using the multiprocessing.Process class, and the target argument is set to the worker function. The worker function generates a random sleep time between 1 and 5 seconds, sleeps for that duration using time.sleep(), prints the wake-up time, and exits.
+
+The if __name__ == "__main__": guard is used to ensure that the code only runs when the script is executed as the main program, preventing it from being executed when imported as a module.
+
+
+
+7. Create a date object of your day of birth.
+
+I don't have a specific date of birth, but I can show you how to create a date object for any given date. Here's an example of how to create a date object for a specific date using the datetime module in Python:
+
+from datetime import date
+
+# Replace the year, month, and day with your desired date of birth
+year = 2000
+month = 1
+day = 1
+
+birth_date = date(year, month, day)
+print(birth_date)
+Replace the year, month, and day variables with your actual date of birth to create a date object representing that date. The example above creates a date object for January 1, 2000.
+
+
+8. What day of the week was your day of birth?
+
+As I mentioned earlier, I don't have a specific date of birth. However, I can provide you with Python code that you can use to determine the day of the week for a given date, including your date of birth:
+
+from datetime import date
+
+# Replace the year, month, and day with your actual date of birth
+year = 2000
+month = 1
+day = 1
+
+birth_date = date(year, month, day)
+day_of_week = birth_date.strftime("%A")
+
+print(f"The day of the week for {birth_date} was {day_of_week}.")
+Replace the year, month, and day variables with your actual date of birth to determine the day of the week for that date. The code uses the strftime method with the format %A to retrieve the full weekday name.
