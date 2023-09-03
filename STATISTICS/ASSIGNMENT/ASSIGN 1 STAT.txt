@@ -1,0 +1,164 @@
+Que 1) Plot a histogram,
+10, 13, 18, 22, 27, 32, 38, 40, 45, 51, 56, 57, 88, 90, 92, 94, 99
+
+To plot a histogram for the given data, you can use various tools and programming languages like Python, R, Excel, or even by hand. Here, I'll provide you with a Python example using the popular data visualization library, Matplotlib:
+
+import matplotlib.pyplot as plt
+
+data = [10, 13, 18, 22, 27, 32, 38, 40, 45, 51, 56, 57, 88, 90, 92, 94, 99]
+
+# Plotting the histogram
+plt.hist(data, bins=10, color='skyblue', edgecolor='black')
+
+# Adding labels and title
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.title('Histogram of Data')
+
+# Displaying the plot
+plt.show()
+This code will create a histogram with 10 bins (you can adjust the number of bins as needed) and display it using Matplotlib. Make sure you have Matplotlib installed in your Python environment to run this code.
+
+
+Que 2) In a quant test of the CAT Exam, the population standard deviation is known to be 100. A sample of 25 tests taken has a mean of 520. Construct an 80% CI about the mean.
+
+To construct an 80% confidence interval (CI) about the mean for a sample with a known population standard deviation, you can use the formula for a z-confidence interval. The formula is:
+CI= x ±Z( σ/root(n))
+
+Where:
+
+x is the sample mean (520 in this case).
+Z is the critical z-value for the desired confidence level (80% confidence corresponds to a 90% two-tailed confidence interval, so Z = 1.2816 for an 80% CI).
+σ is the population standard deviation (100 in this case).
+n is the sample size (25 in this case).
+Now, plug in the values and calculate the confidence interval:
+
+
+CI=520±1.2816(100/root(25))
+
+CI= 520±1.2816(100/5)
+
+CI=520±25.632
+
+The 80% confidence interval about the mean is approximately:
+
+(520−25.632,520+25.632)
+
+So, the 80% confidence interval is approximately (494.368, 545.632). This means you can be 80% confident that the true population mean lies within this interval.
+
+
+
+
+Que 3) A car believes that the percentage of citizens in city ABC that owns a vehicle is 60% or less. A sales manager disagrees with this. He conducted a hypothesis testing surveying 250 residents & found that 170 residents responded yes to owning a vehicle.
+State the null & alternate hypothesis.
+At a 10% significance level, is there enough evidence to support the idea that vehicle owner in ABC city is 60% or less.
+
+In hypothesis testing, you typically have two hypotheses: the null hypothesis (H0) and the alternate hypothesis (H1). These hypotheses are stated based on what you want to test and typically involve an equality (null) and an inequality (alternate).
+
+In your scenario:
+Null Hypothesis (H0):
+The percentage of citizens in city ABC who own a vehicle is 60% or more.
+H0: p ≥ 0.60
+
+Alternate Hypothesis (H1):
+The percentage of citizens in city ABC who own a vehicle is less than 60%.
+H1: p < 0.60
+
+Here:
+
+p represents the population proportion of citizens in city ABC who own a vehicle.
+The null hypothesis (H0) assumes that the population proportion is greater than or equal to 60%.
+The alternate hypothesis (H1) suggests that the population proportion is less than 60%.
+To test these hypotheses at a 10% significance level, you would perform a hypothesis test, typically using a Z-test or a binomial test. In this case, you can use a Z-test for proportions because you have a sample size (n = 250) and the proportion of residents who responded "yes" to owning a vehicle (170/250).
+
+Calculate the test statistic (Z-score) and compare it to the critical value for a one-tailed test at the 10% significance level. If the test statistic falls in the rejection region (i.e., it is significantly lower than the critical value), you would reject the null hypothesis in favor of the alternate hypothesis.
+
+To calculate the Z-score:
+
+Z= p^-p/root(p(1−p)/n)
+
+​Where:
+
+
+^
+p is the sample proportion (170/250).
+
+p is the assumed population proportion (0.60).
+
+n is the sample size (250).
+
+Calculate the Z-score and compare it to the critical value for a one-tailed test at the 10% significance level. If the Z-score is less than the critical value, you can conclude that there is enough evidence to support the idea that the vehicle ownership in ABC city is less than 60%.
+
+
+
+Que 4) What is the value of the 99 percentile?
+2,2,3,4,5,5,5,6,7,8,8,8,8,8,9,9,10,11,11,12
+
+To find the 99th percentile of a dataset, you need to determine the value below which 99% of the data falls. Here's how you can do it for your dataset:
+
+First, arrange the dataset in ascending order:
+2, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 8, 8, 8, 9, 9, 10, 11, 11, 12
+
+Next, calculate the rank (position) of the percentile using the following formula:
+Rank = (Percentile / 100) * (N + 1)
+
+In your case, you want the 99th percentile, so:
+Percentile = 99
+N = 20 (since there are 20 data points)
+
+Rank = (99 / 100) * (20 + 1) = 0.99 * 21 ≈ 20.79
+
+Now, you have a fractional rank of 20.79. To find the 99th percentile value, you interpolate between the data values at rank 20 and rank 21.
+
+The value at rank 20 is 11, and the value at rank 21 is 12.
+
+To interpolate, you can use the formula:
+Interpolated Value = Value at Rank 20 + (Fractional Rank * Difference between Values at Rank 21 and Rank 20)
+
+Interpolated Value = 11 + (0.79 * (12 - 11)) = 11 + (0.79 * 1) = 11 + 0.79 ≈ 11.79
+
+So, the 99th percentile value for your dataset is approximately 11.79.
+
+
+
+
+
+Que 5) In left & right-skewed data, what is the relationship between mean, median & mode?
+Draw the graph to represent the same
+
+In left-skewed (negatively skewed) data:
+
+Mean: The mean is typically less than the median and mode. This is because the long tail on the left side of the distribution "pulls" the mean in that direction.
+
+Median: The median is greater than the mean and mode in left-skewed data. It is less affected by extreme values in the tail.
+
+Mode: The mode may be greater than the mean but less than the median. It tends to be closer to the median, but not necessarily at the exact midpoint of the distribution.
+
+Here's a simple graphical representation of left-skewed data:
+
+
+      _______
+     /      
+    /
+   /
+  /
+ /
+/
+In right-skewed (positively skewed) data:
+
+Mean: The mean is typically greater than the median and mode. This is because the long tail on the right side of the distribution "pulls" the mean in that direction.
+
+Median: The median is less than the mean and mode in right-skewed data. It is less affected by extreme values in the tail.
+
+Mode: The mode may be less than the mean but greater than the median. It tends to be closer to the median but not necessarily at the exact midpoint of the distribution.
+
+Here's a simple graphical representation of right-skewed data:
+
+
+\
+ \
+  \
+   \
+    \
+     \______
+In a symmetric distribution (like a normal distribution), the mean, median, and mode are all equal and located at the center of the distribution. However, in skewed distributions, they diverge from each other as described above. The exact relationships between these central measures depend on the shape and degree of skewness in the data.
