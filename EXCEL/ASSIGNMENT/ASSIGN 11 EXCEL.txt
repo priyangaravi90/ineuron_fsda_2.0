@@ -1,0 +1,176 @@
+1. Use the below table for the following Questions.
+RollNo Name of the student Sub-1 Sub-2 Sub-3 Sub-4 Sub-5 Sub-6
+100101 Rohan                72    55    52    69    95    32
+100102 Mohan                65    51    63    85    71    69
+100103 Ravi meheta          72    56    78    85    47    68
+100104 Ruby tondon          68    71    85    84    78    60
+100105 Radhika gupta        80    78    58    65    68    45
+100106 Rakhi                61    78    45    62    75    64
+100107 david                78    69    96    52    63    87
+100108 mon ika mis hra      96    85    86    84    45    63
+100109 Tommy singh          75    63    54    63    61    98
+100110 p.rakesh             63    52    96    87    78    45
+
+
+1. Find the Minimum Marks and Maximum marks scored by each student.
+
+To find the minimum and maximum marks scored by each student, you can calculate these values for each student individually based on their scores in Sub-1 to Sub-6. Here's how you can calculate it for each student:
+
+Rohan:
+Minimum Marks: 32 (Sub-6)
+Maximum Marks: 95 (Sub-5)
+
+Mohan:
+Minimum Marks: 51 (Sub-2)
+Maximum Marks: 85 (Sub-4)
+
+Ravi meheta:
+Minimum Marks: 47 (Sub-5)
+Maximum Marks: 85 (Sub-4)
+
+Ruby tondon:
+Minimum Marks: 60 (Sub-6)
+Maximum Marks: 85 (Sub-3)
+
+Radhika gupta:
+Minimum Marks: 45 (Sub-6)
+Maximum Marks: 80 (Sub-1)
+
+Rakhi:
+Minimum Marks: 45 (Sub-3)
+Maximum Marks: 78 (Sub-2)
+
+David:
+Minimum Marks: 52 (Sub-4)
+Maximum Marks: 96 (Sub-3)
+
+Monika mishra:
+Minimum Marks: 45 (Sub-6)
+Maximum Marks: 96 (Sub-1)
+
+Tommy singh:
+Minimum Marks: 54 (Sub-3)
+Maximum Marks: 98 (Sub-6)
+
+P. Rakesh:
+Minimum Marks: 45 (Sub-6)
+Maximum Marks: 96 (Sub-3)
+These are the minimum and maximum marks scored by each student in the given subjects.
+
+2. Calculate the totals for each student, use conditional formatting to
+highlight the top students who have scored more than 480.
+
+To calculate the totals for each student and then highlight the top students who have scored more than 480, follow these steps in a spreadsheet software like Microsoft Excel or Google Sheets:
+
+Create a new column to calculate the total marks for each student. You can label this column as "Total Marks."
+
+In the "Total Marks" column for each student, sum their scores in Sub-1 to Sub-6. You can use the SUM function in Excel or Google Sheets. For example, for Rohan (RollNo. 100101), you would enter the following formula in the cell corresponding to Rohan's row:
+=SUM(C2:H2)
+
+Make sure to adjust the cell references for other students accordingly.
+
+After calculating the total marks for each student, you can apply conditional formatting to highlight the top students who have scored more than 480. Here's how you can do it in Excel:
+
+a. Select the "Total Marks" column (or the column where you calculated the totals).
+
+b. Go to the "Home" tab in Excel.
+
+c. Click on "Conditional Formatting" in the "Styles" group.
+
+d. Choose "New Rule" from the dropdown menu.
+
+e. In the "New Formatting Rule" dialog box, select "Use a formula to determine which cells to format."
+
+f. In the "Format values where this formula is true" field, enter the formula to check if the total marks are greater than 480. Assuming your total marks column starts in cell I2, the formula would be:
+=I2>480
+g. Click on the "Format" button to set the formatting for the highlighted cells. You can choose a specific background color or any other formatting style you prefer.
+
+h. Click "OK" to apply the conditional formatting.
+
+Now, the top students who have scored more than 480 will be highlighted in the specified format.
+
+
+3. Calculate the length of the names of each student.
+
+To calculate the length of the names of each student, you can use a formula in a spreadsheet software like Microsoft Excel or Google Sheets. Here's how you can do it:
+
+Create a new column next to the "Name of the student" column. You can label this column as "Name Length."
+
+In the first cell of the "Name Length" column (e.g., cell B2), enter the following formula:
+=LEN(A2)
+
+This formula uses the LEN function to calculate the length of the name in cell A2 (assuming that the "Name of the student" column is in column A).
+
+Press Enter to apply the formula in cell B2.
+
+To calculate the length for all students, simply copy this formula down to fill the "Name Length" column for all students. You can do this by dragging the fill handle (a small square at the bottom-right corner of the selected cell) down to apply the formula to the entire column.
+
+Now, the "Name Length" column will display the length of the names of each student.
+
+
+4. Replace the Name Rakhi with Rocky. Use Formulas
+
+To replace the name "Rakhi" with "Rocky" using formulas in a spreadsheet software like Microsoft Excel or Google Sheets, you can use the SUBSTITUTE function. Here's how you can do it:
+
+Assuming that the "Name of the student" column is in column B, and you want to make this replacement in cell B6 where "Rakhi" is located:
+
+In a new cell (e.g., cell C6), enter the following formula:
+=SUBSTITUTE(B6, "Rakhi", "Rocky")
+
+This formula uses the SUBSTITUTE function to replace "Rakhi" with "Rocky" in the content of cell B6.
+
+Press Enter to apply the formula in cell C6.
+
+Cell C6 will now display "Rocky" instead of "Rakhi."
+
+If you want to replace the name for all occurrences of "Rakhi" in the "Name of the student" column, you can copy cell C6 and paste it over the original data in column B using "Paste Special" with the "Values" option to replace the original names.
+
+This way, all instances of "Rakhi" in the "Name of the student" column will be replaced with "Rocky" using formulas.
+
+
+5. Combine the Roll Numbers and Names. Use formulas. The end result
+should look like below.
+100101Rohan
+
+To combine the Roll Numbers and Names using formulas in a spreadsheet software like Microsoft Excel or Google Sheets, you can use the CONCATENATE function or the ampersand (&) operator. Here's how you can do it:
+
+Assuming that the "RollNo." column is in column A and the "Name of the student" column is in column B:
+
+In a new column (e.g., column C), enter the following formula in the first cell (e.g., cell C2):
+
+Using CONCATENATE function:
+=CONCATENATE(A2, B2)
+OR
+
+Using the ampersand (&) operator:
+=A2 & B2
+
+Both of these formulas will combine the contents of cell A2 (Roll Number) and cell B2 (Name of the student) without any space between them.
+
+Press Enter to apply the formula in cell C2.
+
+If you want to combine the Roll Numbers and Names for all students, simply copy the formula down to fill the entire column C. You can do this by dragging the fill handle (a small square at the bottom-right corner of the selected cell) down to apply the formula to the entire column.
+
+Now, the "Roll Numbers and Names" column (column C) will display the combined Roll Numbers and Names for each student, as shown in your desired format.
+
+
+6. As you can see that some names have spacing issues. Use Formulas
+to correct that spacing. Also ensure that the names and surnames start
+with a capital letter
+
+To correct spacing issues and ensure that names and surnames start with a capital letter using formulas in a spreadsheet software like Microsoft Excel or Google Sheets, you can use a combination of functions such as PROPER, SUBSTITUTE, and TRIM. Here's how you can do it:
+
+Assuming that the corrected names will be placed in a new column (e.g., column D) and that the original names are in column B, you can follow these steps:
+
+In cell D2 (the first cell of the new column), enter the following formula:
+=PROPER(SUBSTITUTE(TRIM(B2), " ", ""))
+
+This formula does the following:
+TRIM removes any leading or trailing spaces from the original name.
+SUBSTITUTE removes any spaces within the name.
+PROPER capitalizes the first letter of each word.
+Press Enter to apply the formula in cell D2.
+
+Copy the formula down to fill the entire column D with corrected names by dragging the fill handle (a small square at the bottom-right corner of the selected cell) down.
+
+Now, column D will contain the corrected names with proper spacing and capitalization of the first letter of each word.
